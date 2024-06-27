@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+</head>
+<body>
+
+    Informe quantas rodadas serão sorteadas: <input id="input_sorteio"> <br><br>
+
+    <select id="select_escolha"> 
+        <option value="#">Selecione uma opção</option>
+        <option value="impar">Ímpar</option>
+        <option value="par">Par</option>
+    </select>
+
+    <button onclick="calcular()">Jogar</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+        div_mensagem.innerHTML = "";
+        var sorteio = Number (input_sorteio.value);
+
+        var escolha = select_escolha.value;
+        var impar = 0;
+        var par = 0;
+
+        if (escolha == "#") {
+            alert("Escolha uma opção")
+        } else {
+            for ( var cont = 1; cont <= sorteio; cont++) {
+                
+                var aleatorio = (Math.random() * 9).toFixed(0);
+
+            if (aleatorio == 0 || aleatorio == 2 || aleatorio == 4 || aleatorio == 6 || aleatorio == 8) {
+                par++;
+
+                var tipo = 'par';
+                
+            } else {
+                impar++;
+                var tipo = 'impar';
+            }
+
+            if (escolha == 'impar') {
+                div_mensagem.innerHTML += `Número sorteado ${aleatorio} é ${tipo} è pgm = ${par} – user = ${impar} <br>`;
+                
+                if (cont == sorteio){
+                    if (par > impar) {
+                        div_mensagem.innerHTML += `O pgm foi o ganhador<br>`;
+                    } else if (par < impar) {
+                        
+                        div_mensagem.innerHTML += `O user foi o ganhador<br>`;
+                    } else {
+                        div_mensagem.innerHTML += `Partida empatada<br>`;
+
+                }
+                }
+            } else {
+                div_mensagem.innerHTML += `Número sorteado ${aleatorio} é ${tipo} è pgm = ${impar} – user = ${par} <br>`;
+
+                if (cont == sorteio){
+                    if (par > impar) {
+                        div_mensagem.innerHTML += `O user foi o ganhador<br>`;
+                    } else if (par < impar) {
+                        
+                        div_mensagem.innerHTML += `O pgm foi o ganhador<br>`;
+                    } else {
+                        div_mensagem.innerHTML += `Partida empatada<br>`;
+                        
+                    }
+                }
+                
+                
+            }
+        }
+    }
+    }
+</script>

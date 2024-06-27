@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores</title>
+</head>
+
+<body>
+
+    <h1>Desafio temperatura</h1>
+
+     Informe a temperatura: <br>
+    <input id="input_temperatura"> <br><br>
+
+    <button onclick="calcular()"> Calcular </button> <br><br>  
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+
+        var temperatura = Number(input_temperatura.value);
+
+        if (temperatura >= 21) {
+            if (temperatura <= 24) {
+                div_mensagem.innerHTML = `A temperatura está confortável`;
+            } else {
+                div_mensagem.innerHTML = `A temperatura está desconfortavel`;
+            }
+        } else {
+            div_mensagem.innerHTML = `A temperatura está desconfortavel`;
+        }
+    }
+</script>

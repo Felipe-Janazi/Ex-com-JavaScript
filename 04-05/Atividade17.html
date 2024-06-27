@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 17</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+    
+
+    <h1>Atividade 17</h1>
+
+    Informe quantas coca-cola você acha que já bebeu na vida: <input id="input_coca"> <br>
+
+    <button onclick="calcular() ">Ver a quantidade</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+    function calcular() {
+        div_mensagem.innerHTML = '';
+
+        var coca = Number (input_coca.value);
+
+        for (var contador = 1; contador <= coca; contador++) {
+            div_mensagem.innerHTML += `<img src="https://giassi.vtexassets.com/arquivos/ids/644033/Refrigerante-Coca-Cola-Garrafa-200ml.png?v=638211559211900000" width= 15%>`;
+        }
+
+    }
+</script>

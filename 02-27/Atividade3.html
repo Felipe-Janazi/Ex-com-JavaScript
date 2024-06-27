@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+</head>
+<body>
+
+    <h1> Atividade 3</h1>
+
+    Insira a sua nota da prova 1: 
+    <input id="nota1"> <br> <br>
+
+    Insira a sua nota da prova 2: 
+    <input id="nota2"> <br> <br>
+
+    Insira a sua nota da prova 3: 
+    <input id="nota3"> <br> <br>
+
+    <button onclick="media()">
+        Analisar desempenho
+    </button> <br> <br>
+
+    <div id="mensagem">
+        
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+    function media() {
+        var n1 = Number (nota1.value);
+        var n2 = Number (nota2.value);
+        var n3 = Number (nota3.value);
+
+        var mediaNota = (n1 + n2 + n3) / 3;
+
+        if (mediaNota > 9.4) {
+
+            mensagem.innerHTML = `Sua média foi de ${mediaNota}. Parabéns, você é fora de série!`
+        }
+
+        if (mediaNota <= 9.4) {
+
+        mensagem.innerHTML = `Sua média foi de ${mediaNota}.`;
+        }
+
+
+        
+
+
+    }
+</script>

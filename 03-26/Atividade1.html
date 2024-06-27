@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+</head>
+<body>
+
+    <h1>Atividade 1</h1>
+
+    Informe a nota para atendimento: <br>
+    <input type="text" id="input_nota"> <br><br>
+
+    <button onclick="calcular()">Avaliar atendimento</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script> 
+
+function calcular() {
+    var nota = Number (input_nota.value);
+
+    if (nota > 10 || nota < 0) {
+        div_mensagem.innerHTML = `Nota inválida`;
+    } else if (nota < 5) {
+        div_mensagem.innerHTML = `Não aprovado`;
+    } else if (nota <= 6) {
+        div_mensagem.innerHTML = `Neutro`;
+    } else {
+        div_mensagem.innerHTML = `Aprovado`;
+    }
+}
+</script>

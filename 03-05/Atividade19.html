@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 19</title>
+</head>
+<body>
+
+    <h1> Atividade 19</h1>
+
+    Informe sua nota 1:
+    <input id="input_nota1"> <br><br>
+
+    Informe sua nota 2: 
+    <input id="input_nota2"> <br><br>
+
+    <button onclick="calcular()">Verificar situação</button>
+    
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script> 
+
+function calcular() {
+    
+    var n1 = Number (input_nota1.value);
+    var n2 = Number (input_nota2.value); 
+
+    var media = (n1 + n2) / 2; 
+
+    if (media >= 6) {
+
+        div_mensagem.innerHTML = `Parabéns, aprovado!`; 
+    } else {
+
+        div_mensagem.innerHTML = "Tente outra vez...";
+    }
+}
+</script>

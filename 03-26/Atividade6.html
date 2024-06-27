@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 6</title>
+</head>
+<body>
+
+    <h1>Atividade 6</h1>
+
+    Informe a nota: <br>
+    <input type="text" id="input_nota"> <br><br>
+
+    Informe a frequencia: <br>
+    <input id="input_frequencia"> <br><br>
+
+    <button onclick="calcular()">Analisar aluno</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+
+        var nota = Number (input_nota.value);
+        var frequencia = Number (input_frequencia.value);
+
+        if (nota < 0 || nota > 10) {
+            alert ("Onde já se viu nota <0 ou >10?!")
+                div_mensagem.innerHTML  = "";
+        } else if (frequencia < 0 || frequencia > 100) {
+            alert ("Onde já se viu frequência <0 ou >100?!")
+                div_mensagem.innerHTML = '';
+        } else if (nota < 6) {
+            div_mensagem.innerHTML =   "Aluno ficou abaixo da média" ;
+        } else if (nota <= 8) {
+            div_mensagem.innerHTML  = 'Aluno ficou acima da média';
+        } else {
+            div_mensagem.innerHTML = 'Aluno acima da média'
+        }
+
+        if (frequencia >= 75) {
+            div_mensagem.innerHTML += '<br>Aluno aprovado por frequÇencia';
+        } else {
+            div_mensagem.innerHTML += '<br>Aluno reprovado por frequência';
+        }
+
+    }
+</script>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade avaliativa</title>
+</head>
+
+<body>
+
+    <h1>Atividade avaliativa</h1>
+
+    Episódio que deseja começar assistindo: <input type="number" id="input_episodio"> <br>
+
+    Quantidade de tempo disponível: <input type="number" id="input_tempo"> <br>
+
+    Unidade em tempo: <select id="select_tempo">
+        <option value="#">Selecione uma opção</option>
+        <option value="horas">Horas</option>
+        <option value="minutos">Minutos</option>
+    </select> <br>
+
+    Pular abertura? <select id="select_abertura">
+        <option value="#">Selecione uma opção</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+    </select> <br>
+
+    Pular encerramento? <select id="select_encerramento">
+        <option value="#">Selecione uma opção</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+    </select> <br>
+
+    <button onclick="calcular()">Assistir episódios</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+        div_mensagem.innerHTML = "";
+
+        var episodio = Number(input_episodio.value);
+        var tempo = Number(input_tempo.value);
+        var medidaTempo = select_tempo.value;
+        var abertura = select_abertura.value;
+        var encerramento = select_encerramento.value;
+        var episodioCompleto = `Episódio: ${episodio} <br>`;
+        var tempoParaTravar = 0;
+
+        if (episodio >= 1 && episodio <= 1100) {
+
+            if (medidaTempo != '#') {
+
+                if (abertura != '#') {
+
+                    if (encerramento != '#') {
+
+                        var tempoDoEP = 0;
+                        var tempoEP = 20;
+
+                        if (medidaTempo == 'horas') {
+
+                            var tempoDispo = tempo * 60;
+                        } else {
+                            var tempoDispo = tempo;
+                        }
+
+                        for (var cont = 1; cont <= tempoDispo; cont++) {
+                        if (abertura == 'nao' && encerramento == 'nao') {
+                            tempoEP = 24;
+
+                                if (episodio > 1100) {
+                                    var qtdEP = tempoParaTravar / tempoEP;
+                                    tempoDispo = 0;
+                                } else {
+                                    tempoDoEP += 1;
+                                    tempoParaTravar += 1;
+
+                                    if (tempoDoEP == 1 || tempoDoEP == 2) {
+                                        episodioCompleto += `Minuto ${tempoDoEP}: Assistindo Abertura <br>`;
+                                    } else if (tempoDoEP <= 22) {
+                                        episodioCompleto += `Minuto ${tempoDoEP}: Assistindo o Episódio <br>`;
+                                    } else if (tempoDoEP <= 24) {
+                                        episodioCompleto += `Minuto ${tempoDoEP}: Assistindo Encerramento <br>`;
+                                    }
+
+
+                                    if (tempoParaTravar == tempoDispo) {
+                                        var qtdEP = tempoParaTravar / tempoEP;
+                                    } else {
+                                        if (tempoDoEP == 24) {
+                                            episodio += 1;
+                                            if (episodio > 1100) {
+                                            } else {
+
+                                                episodioCompleto += `<br> <br> Episódio: ${episodio} <br>   `
+                                            }
+                                            tempoDoEP = 0;
+                                        }
+                                    }
+                                }
+                            
+
+                        } else if (encerramento == 'nao') {
+                            tempoEP = 22;
+
+                                if (episodio > 1100) {
+                                    var qtdEP = tempoParaTravar / tempoEP;
+                                    tempoDispo = 0;
+                                } else {
+                                    tempoDoEP += 1;
+                                    tempoParaTravar += 1;
+
+                                    if (tempoDoEP <= 20) {
+                                        episodioCompleto += `Minuto ${tempoDoEP}: Assistindo o Episódio <br>`;
+                                    } else if (tempoDoEP <= 22) {
+                                        episodioCompleto += `Minuto ${tempoDoEP}: Assistindo Encerramento <br>`;
+                                    }
+
+
+                                    if (tempoParaTravar == tempoDispo) {
+                                        var qtdEP = tempoParaTravar / tempoEP;
+
+                                    } else {
+                                        if (tempoDoEP == 22) {
+                                            episodio += 1;
+                                            if (episodio > 1100) {
+                                            } else {
+
+                                                episodioCompleto += `<br> <br> Episódio: ${episodio} <br>   `
+                                            }
+                                            tempoDoEP = 0;
+                                        }
+                                    }
+                                }
+
+                        } else if (abertura == 'nao') {
+                            tempoEP = 22; 
+
+                                if (episodio > 1100) {
+                                    var qtdEP = tempoParaTravar / tempoEP;
+                                    tempoDispo = 0;
+                                } else {
+                                    tempoDoEP += 1;
+                                    tempoParaTravar += 1;
+
+
+                                    if (tempoDoEP == 1 || tempoDoEP == 2) {
+                                        episodioCompleto += `Minuto ${tempoDoEP}: Assistindo Abertura <br>`;
+                                    } else if (tempoDoEP <= 22) {
+                                        episodioCompleto += `Minuto ${tempoDoEP}: Assistindo o Episódio <br>`;
+                                    }
+
+                                    if (tempoParaTravar == tempoDispo) {
+                                        var qtdEP = tempoParaTravar / tempoEP;
+                                    } else {
+                                        if (tempoDoEP == 22) {
+                                            episodio += 1;
+                                            if (episodio > 1100) {
+                                            } else {
+
+                                                episodioCompleto += `<br> <br> Episódio: ${episodio} <br>   `
+                                            }
+                                            tempoDoEP = 0;
+                                        }
+                                    }
+                                }
+
+                        } else {
+
+                            tempoEP = 20;
+                                if (episodio > 1100) {
+                                    var qtdEP = tempoParaTravar / tempoEP;
+                                    tempoDispo = 0;
+                                } else {
+                                    tempoDoEP += 1;
+                                    tempoParaTravar += 1;
+
+                                    episodioCompleto += `Minuto ${tempoDoEP}: Assistindo o Episódio <br>`;
+
+                                    if (tempoParaTravar == tempoDispo) {
+                                        var qtdEP = tempoParaTravar / tempoEP;
+
+                                    } else {
+                                        if (tempoDoEP == 20) {
+                                            episodio += 1;
+                                            if (episodio > 1100) {
+                                            } else {
+
+                                                episodioCompleto += `<br> <br> Episódio: ${episodio} <br>   `
+                                            }
+                                            tempoDoEP = 0;
+                                        }
+                                    }
+                                }
+                        }
+                        }
+                        div_mensagem.innerHTML = `
+                    ${episodioCompleto}
+                    
+                    <br> Fim dos episódios! <br>
+                    
+                    Foram assistidos: ${qtdEP} episódios`;
+
+                    } else {
+                        alert("Informe uma opção de encerramento válida")
+                    }
+
+                } else {
+                    alert("Informe uma opção para abertura válida")
+                }
+
+            } else {
+                alert("Uma medida de tempo válida")
+            }
+
+        } else {
+            alert("O número do episódio é inválido");
+        }
+    }
+</script>

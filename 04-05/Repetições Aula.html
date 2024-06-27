@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetições</title>
+</head>
+<body>
+
+    <button onclick="contar()">Contar</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function contar_ate_10() {
+
+
+            div_mensagem.innerHTML += `1 <br> 
+            2 <br>
+            3 <br>
+            4 <br>
+            5 <br>`;
+        
+    }
+
+    function contar_variavel_global() {
+
+        contador ++; 
+
+        if (contador <= 10) {
+            div_mensagem.innerHTML += `${contador}<br>`;
+        }
+
+
+
+    }
+
+    var limite = 10;
+    var contador = 1;
+    function contar() {
+
+        for (; contador <= limite; contador ++ ) {
+            div_mensagem.innerHTML += `${contador}<br>`;
+            }
+       
+            limite += 10;
+
+    }
+</script>

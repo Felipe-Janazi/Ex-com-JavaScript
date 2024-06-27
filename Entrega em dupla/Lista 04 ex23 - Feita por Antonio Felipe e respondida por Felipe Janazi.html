@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade de dupla</title>
+</head>
+<body>
+
+    <h1>Atividade de dupla</h1>
+
+    Informe sua identificação: <br>
+    <input id="input_identificacao"> <br><br>
+
+    Informe sua massa atual: <br>
+    <input id="input_massa"> <br><br>
+
+    Informe sua altura: <br>
+    <input id="input_altura"> <br><br>
+
+    Informe o planeta que deseja popular: <br>
+    <input id="input_planeta"> <br><br>
+
+    <button onclick="verificar()">Verificar condições</button> <br>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function verificar() {
+        var identificacao = input_identificacao.value;
+        var massa = Number(input_massa.value);
+        var altura = Number (input_altura.value);
+        var planeta = input_planeta.value;
+
+        var newtons = massa * 10;
+
+        var marte = massa * 3.7;
+        var jupiter = massa * 24.8;
+        var saturno = massa * 10.4;
+
+
+
+            if (newtons < 450 || newtons > 1500 || altura < 1|| altura > 2){
+              div_mensagem.innerHTML = `Caro(a) ${identificacao}, agradecemos a tentativa. Você queria ir para ${planeta}, mas ficará na Terra para sua segurança!"`;
+            } else if (newtons <= 650 && altura <= 1.7) {
+                div_mensagem.innerHTML = `"Parabéns ${identificacao}, você foi selecionado para popular Júpiter, lá seu peso será ${jupiter}(N)`;
+
+                alert("Arrume as malas e prepare-se para viagem! (só de ida)")
+            } else if (newtons > 650 && newtons < 1200 && altura > 1.7 && altura < 1.8) {
+                div_mensagem.innerHTML = `Parabéns ${identificacao}, você foi selecionado para popular Marte, lá seu peso será ${marte}(N)`;
+
+                alert ("Arrume as malas e prepare-se para viagem! (só de ida)")
+            } else if (newtons >= 1200 && newtons <= 1500 && altura >= 1.8 && altura <= 2) {
+                div_mensagem.innerHTML = `Parabéns ${identificacao}, você foi selecionado para popular Saturno, lá seu peso será ${saturno}(N)`;
+
+                alert("Arrume as malas e prepare-se para viagem! (só de ida)")
+            } else {
+                div_mensagem.innerHTML = `Infelizmente um de seus parâmetros foi invalidado em nosso processo`;
+            }
+        
+    }
+</script>

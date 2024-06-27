@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+<body>
+
+    <h1>Doceria</h1>
+
+    Quantidade de Macarons: <input type="number" id="input_macaron"> <br>
+    Quantidade de Brigadeiro: <input type="number" id="input_brigadeiro"> <br>
+    Quantidade de Cupcakes: <input type="number" id="input_cupcake"> <br>
+    Quantidade de Cheesecakes: <input type="number" id="input_cheesecake"> <br> <br>
+
+    Valor de cada Maracon: <input type="number" id="input_VMacaron"> <br>
+    Valor de cada Brigadeiro: <input type="number" id="input_VBrigadeiro"> <br>
+    Valor de cada Cupcake: <input type="number" id="input_VCupcake"> <br>
+    Valor de cada Cheesecake: <input type="number" id="input_VCheesecake"> <br> <br>
+
+    <button onclick="verificar() ">Verificar vendas</button> <br> <br>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function verificar() {
+        div_mensagem.innerHTML = '';
+
+        var macaron = Number (input_macaron.value);
+        var brigadeiro = Number (input_brigadeiro.value);
+        var cupcake = Number (input_cupcake.value);
+        var cheesecake = Number (input_cheesecake.value);
+
+        var valorMacaron = Number (input_VMacaron.value);
+        var valorBrigadeiro = Number (input_VBrigadeiro.value);
+        var valorCupcake = Number (input_VCupcake.value);
+        var valorCheesecake = Number (input_VCheesecake.value);
+
+        if (macaron >= 0 && brigadeiro >= 0 && cupcake >= 0 && cheesecake >= 0 && valorMacaron >= 0 && valorBrigadeiro >= 0 && valorCupcake >= 0 && valorCheesecake >= 0) {
+
+            var venda = 0;
+            var texto = "";
+
+            var valorTotalMacaron = macaron * valorMacaron;
+            var valorTotalBrigadeiro = brigadeiro * valorBrigadeiro;
+            var valorTotalCupcake = cupcake * valorCupcake;
+            var valorTotalCheesecake = cheesecake * valorCheesecake;
+
+            var vendaTotal = valorTotalMacaron + valorTotalBrigadeiro + valorTotalCupcake + valorTotalCheesecake;
+
+            for (var contMacaron = 0; contMacaron < macaron; contMacaron++) {
+                venda++
+
+                texto += `Venda ${venda} - <img src="macaron.jpg" width= "100px"> - Valor unitário: R$${valorMacaron}  <br> `;
+
+            }
+
+            for (var contBrigadeiro = 0; contBrigadeiro < brigadeiro; contBrigadeiro++) {
+                venda++
+
+                texto += `Venda ${venda} - <img src="brigadeiro.webp" width= "100px"> - Valor unitário: R$${valorBrigadeiro}  <br> `;
+
+            }
+
+            for (var contCupcake = 0; contCupcake < cupcake; contCupcake++) {
+                venda++
+
+                texto += `Venda ${venda} - <img src="cupcake.jpg" width= "100px"> - Valor unitário: R$${valorCupcake}  <br> `;
+
+            }
+
+            for (var contCheesecake = 0; contCheesecake < cheesecake; contCheesecake++) {
+                venda++
+
+                texto += `Venda ${venda} - <img src="cheesecake.webp" width= "100px"> - Valor unitário: R$${valorCheesecake}  <br> `;
+
+            }
+
+            texto += `<br> <br> Com a quantidade de ${macaron} Macarons, ${brigadeiro} Brigadeiros, ${cupcake} Cupcakes e ${cheesecake} Cheesecakes, a venda totalizará R$${vendaTotal}`
+
+           
+            div_mensagem.innerHTML = `${texto}`;
+
+        } else {
+            div_mensagem.innerHTML = `Informe valores maiores que 0 para prosseguirmos`;
+        }
+    }
+</script>

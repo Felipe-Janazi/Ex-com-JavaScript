@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 14</title>
+</head>
+
+<body>
+    <h1> Atividade 14</h1>
+
+    Nome do passageiro:
+    <input id="ipt_nome" placeholder="Nome do passageiro"> <br><br>
+
+    Distância em km:
+    <input id="ipt_distancia" placeholder="Distancia em KM"> <br> <br>
+
+    Bandeira da corrida:
+    <input type="number" id="ipt_bandeira" placeholder="Digite 1, 2 ou 3" max="3" min="1"><br><br>
+
+    Horário da corrida:
+    <input type="number" id="ipt_horario" placeholder="Somente horarios inteiros" max="23" min="0"> <br><br>
+
+    <button onclick="calculo()"> Calcular corrida </button> <br><br>
+
+    <div id="div_mensagem"> </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function calculo() {
+        var distancia = Number(ipt_distancia.value);
+        var bandeira = Number(ipt_bandeira.value);
+        var horario = Number(ipt_horario.value);
+
+        var valorkm = distancia * 1.25;
+
+        var valorFinal = 0;
+
+        if (horario >= 0) {
+
+            valorFinal = valorkm + valorkm * ((bandeira * 5) / 100);
+            //valorFinal = bandeira * 5 / 100 + valorkm;  
+        }
+
+        if (horario >= 7) {
+
+            valorFinal = valorkm + valorkm * ((bandeira * 10) / 100);
+            
+        }
+
+        if (horario >= 13) {
+
+            valorFinal = valorkm + valorkm * ((bandeira * 15) / 100);
+             
+        }
+
+        div_mensagem.innerHTML += `<br> Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${valorFinal}`;
+    }
+
+</script>

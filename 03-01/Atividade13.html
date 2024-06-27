@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 13</title>
+</head>
+<body>
+
+    <h1> Atividade 13</h1>
+
+    Informe uma nota: 
+    <input id="ipt_nota1">
+
+    Informe outra nota: 
+    <input id="ipt_nota2"> 
+
+    <button onclick="calculo()"> Verificar situação</button>
+    
+</body>
+</html>
+
+<script> 
+
+    function calculo() {
+
+        var N1 = Number (ipt_nota1.value);
+        var N2 = Number (ipt_nota2.value); 
+
+        var media = (N1 + N2) /2;
+
+        if (media >= 6) {
+            alert ( "Parabéns, aprovado!");
+        } else  { 
+
+            alert ("Tente outra vez..."); 
+        }
+    }
+
+</script>

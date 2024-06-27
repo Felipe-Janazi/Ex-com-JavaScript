@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 8</title>
+</head>
+<body>
+
+    <h1>Desafio 8</h1>
+
+    Informe o nome da empresa: <br>
+    <input id="input_nome"> <br><br>
+
+    Informe o valor da bolsa: <br>
+    <input id="input_bolsa"> <br> <br>
+
+    Informe o valor do VR: <br>
+    <input id="input_vr"> <br><br>
+
+    informe o tempo de deslocamento (min): <br>
+    <input id="input_deslocamento"> <br><br>
+
+    <button onclick="calcular()">E preferida?</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script> 
+
+function calcular() {
+
+    var nome = input_nome.value;
+    var bolsa = Number (input_bolsa.value);
+    var vr = Number (input_vr.value);
+    var deslocamento = Number (input_deslocamento.value);
+
+    if (bolsa >= 1800 || vr >= 20 || deslocamento <= 30) {
+        div_mensagem.innerHTML = `A empresa ${nome} é uma de suas preferências`;
+    } else { 
+        div_mensagem.innerHTML = `A empresa ${nome} está fora da sua lista`;
+    }
+}
+</script>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 15</title>
+</head>
+<body>
+
+    <h1>Atividade 15</h1>
+
+    informe o nome do produto: <input id="input_nome"> <br>
+
+    Informe o preço da compra: <input id="input_preco"> <br>
+
+    <button onclick="cadastrar()">Cadastrar</button> <br>
+
+    <button onclick="verificar()">Relatório de estoque</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+var lista_nome = [];
+var lista_preco = [];
+
+    function cadastrar(){
+
+        var nome = input_nome.value;
+        var preco = Number (input_preco.value);
+
+        lista_nome.push(nome);
+        lista_preco.push(preco);
+
+
+    }
+
+    function verificar() {
+        div_mensagem.innerHTML = '';
+
+        var tamanho_nome = lista_nome.length - 1;
+        var tamanho_preco = lista_preco.length - 1;
+
+        div_mensagem.innerHTML += `Total de produtos: ${tamanho_nome +1} <br> `;
+
+        for (var index = 0;  index <= tamanho_nome; index++) {
+
+            var precoAtual = lista_preco[index];
+
+            var vender = precoAtual * 1.25;
+
+            div_mensagem.innerHTML += ` Produto ${index +1}: ${lista_nome[index]}  <br> 
+
+            Preço de compra: R$${lista_preco[index]}. Vender por R$${vender}  <br>`;
+        }
+    }
+</script>

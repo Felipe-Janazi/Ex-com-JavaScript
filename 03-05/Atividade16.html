@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 16</title>
+</head>
+
+<body>
+
+    <h1> Atividade 16</h1>
+
+    Informe o saldo de sua conta:
+    <input id="input_saldo"> <br><br>
+
+    Informe quanto deseja retirar:
+    <input id="input_retirar"> <br><br>
+
+    <button onclick="calcular()">Analisar conta</button> <br> <br>
+
+    <div id="div_mensagem"> </div>
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+
+        var saldo = Number(input_saldo.value);
+        var debito = Number(input_retirar.value);
+        var conta = saldo - debito;
+
+        if (conta < 0) {
+
+            div_mensagem.innerHTML = `<b style = "color: red"> o saldo atual da conta corrente é ${conta} </b> `;
+        } else {
+
+            div_mensagem.innerHTML = `<i style = "color: blue"> o saldo atual da conta corrente é ${conta} </i>`;
+        }
+    }
+</script>

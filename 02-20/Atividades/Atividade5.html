@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+</head>
+<body>
+    
+    <h1>
+        Atividade 5
+    </h1>
+
+    Escreva seu nome:
+    <input id="nome"> <br> <br>
+
+    Nota continuada:
+    <input id="Ncontinuada"> <br> <br>
+
+    Nota semestral:
+    <input id="Nsemestral"> <br> <br>
+
+
+    <button onclick="calculo()">
+        Calcular média:
+    </button>
+</body>
+</html>
+
+<script> 
+
+    function calculo() { 
+
+        var n1 = Number (Ncontinuada.value); 
+        var n2 = Number (Nsemestral.value);
+
+        var NC = n1 * 0.4; 
+        var NS = n2 * 0.6;
+        var media = NC + NS;
+
+        alert ( "A média de " + nome.value + " será de " + media);
+
+    }
+
+</script>

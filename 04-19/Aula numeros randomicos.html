@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="gerar()">Gerar aleatório</button> <br> <br>
+    <button onclick="gerar0_10()">Gerar aleatório entre 0 e 10</button><br><br>
+    <button onclick="gerar5_20()">Gerar aleatório entre 5 e 20</button><br><br>
+    <button onclick="gerar24_49()">Gerar aleatório entre 24 e 49</button><br><br>
+    <button onclick="gerar_menos50_50()">Gerar aleatório entre -50 a 50</button><br><br>
+    <button onclick="sortear()">Sortear 3</button><br><br>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function gerar() {
+    var aleatorio = Math.random();
+    div_mensagem.innerHTML += `Sorteado: ${aleatorio} <br>`;
+    }
+
+    function gerar0_10() {
+    var aleatorio = Math.random();
+    var calculo = aleatorio * 10;
+    div_mensagem.innerHTML += `Sorteado: ${calculo}<br>`;
+    }
+
+    function gerar5_20() {
+    var aleatorio = Math.random();
+    var calculo = aleatorio * 15 + 5;
+    div_mensagem.innerHTML += `Sorteado: ${calculo}<br>`;
+    }
+
+    function gerar24_49() {
+    var aleatorio = Math.random();
+    var min = 24;
+    var max = 49;
+    var intervalo = max - min;
+
+    var aleatorio = Math.random();
+    var novo_aleatorio = aleatorio * intervalo + min;
+    div_mensagem.innerHTML += `Sorteado: ${novo_aleatorio}<br>`;
+    }
+
+    function gerar_menos50_50() {
+    var aleatorio = Math.random();
+    var min = -50;
+    var max = 50;
+    var intervalo = max - min;
+
+    var aleatorio = Math.random();
+    var novo_aleatorio = aleatorio * intervalo + min;
+
+    var decimal = novo_aleatorio.toFixed(2);
+    var inteiro = novo_aleatorio.toFixed(0);
+
+    div_mensagem.innerHTML += `Sorteado: ${inteiro}<br>
+    Decimal: ${decimal} <br>`;
+    }
+
+    function sortear() {
+        var aleatorio = (Math.random() * 4 + 1).toFixed(0);
+
+
+        for (var cont = 1; aleatorio != 3; cont++) {
+           aleatorio = (Math.random() * 4 + 1).toFixed(0);
+        }
+        div_mensagem.innerHTML = `Você sorteou o número 3 em ${cont} tentativas`
+    }
+
+    </script>

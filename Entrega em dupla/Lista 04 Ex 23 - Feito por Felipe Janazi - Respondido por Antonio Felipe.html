@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white; font-family: 'Trebuchet MS', 'Lucida Sans Unicode';">
+
+    <!-- Feito por: Felipe Janazi
+
+        Viagem ao parque de diversão: 
+
+        Você irá no parque algoritmolandia para aproveitar junto de sua familia uma bela tarde de sol, com diversos brinquedos para que todos se divirtam. Mas para alguns brinquedos é necessário um peso mínimo e máximo e altura minimas e máximas para que você possa ir. 
+        Se baseando que você foi com sua mulher e dois filhos e desejam ir na montanha russa, torre do espetáculo, carrinho bate-bate e barco viking faça os calculos solicitados com base nas informações abaixo.
+
+        Você = 80kg e 1.80 de altura
+        Esposa = 60kg e 1.60 de altura 
+        Filhos = 50 kg e 1.50 de altura (cada)
+
+        Preço unitário: Montanha russa R$ 15.00 cada
+        Torre do espetáculo: R$ 10.00 cada
+        Carrinho bate bate: R$ 10.00 cada
+        Barco viking: R$ 12.5 cada
+
+        Faça os seguintes pedidos: 
+
+        A) faça a confirmação se todos que foram podem ir em cada um dos brinquedos que desejam ir (Montanha russa: 50kg minimo e 100kg maximo e 1.60 altura mínima e 1.90 altura maxima) ( torre do espetaculo: elevador aguenta somente até 300kg, caso o peso ultrapasse será emitida uma mensagem informando que alguém precisa descer do elevador) (carrinho bate-bate: 50kg Minimo e 90kg Maximo) (Barco viking: 60kg minimo e 90lg maximos e 1.40 de altura minima e 1.80 de altura máxima). Exiba abaixo do botão a seguinte mensagem: 
+
+        "O (a) XXXXX pode ir no brinquedo XXXX"
+        Para cada uma das pessoas e brinquedos.
+
+        DESAFIO
+
+        B) Faça o calculo em reais de todos os gastos neste dia de diversões da maneira que desejar.
+
+        Resolução: Antonio Felipe Souza 
+    --> 
+<h1>Viagem ao parque de diversão</h1>
+
+<button onclick="validacao()">Validação</button>
+<br>
+
+<div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function validacao(){
+        var PesoaMinMontanha = 50;
+        var PesoMaxMontanha = 100;
+        var AlturaMinMontanha = 1.6;
+        var AlturaMaxMontanha = 1.9;
+
+        var PesoaMinCarrinho = 50;
+        var PesoMaxCarrinho = 100;
+
+        var PesoMinViking = 60;
+        var PesoMaxViking = 90;
+        var AlturaMinViking = 1.4;
+        var AlturaMaxViking = 1.8;
+        
+        var PesoEsposo = 80;
+        var AlturaEsposo = 1.8;
+
+        var PesoEsposa = 60;
+        var AlturaEsposa = 1.6;
+
+        var PesoFilhos = 50;
+        var AlturaFilhos = 1.5;
+
+        var MaxElevador = 300;
+
+        var ValorMontanha = 15
+        var ValorTorre = 10
+        var ValorCarrinho = 10
+        var ValorBarco = 12.5
+
+        var gasto = 0;
+
+        //MONTANHA RUSSA
+        //validação esposo
+        if ((PesoEsposo < PesoaMinMontanha || PesoEsposo > PesoMaxMontanha) || (AlturaEsposo < AlturaMinMontanha || AlturaEsposo > AlturaMaxMontanha)){
+            div_mensagem.innerHTML = "<br><br>O Esposo não poderá ir na montanha russa!";
+        } else {
+            div_mensagem.innerHTML = "<br><br>O Esposo está liberado para ir na montanha russa!";
+            gasto += ValorMontanha;
+        }
+
+        //validação esposa
+        if ((PesoEsposa < PesoaMinMontanha || PesoEsposa > PesoMaxMontanha) || (AlturaEsposa < AlturaMinMontanha || AlturaEsposa > AlturaMaxMontanha)){
+            div_mensagem.innerHTML += "<br><br>A Esposa não poderá ir na montanha russa!";
+        } else {
+            div_mensagem.innerHTML += "<br><br>A Esposa está liberada para ir na montanha russa!";
+            gasto += ValorMontanha;
+        }
+
+        //validação filhos
+        if ((PesoFilhos < PesoaMinMontanha || PesoFilhos > PesoMaxMontanha) || (AlturaFilhos < AlturaMinMontanha || AlturaFilhos > AlturaMaxMontanha)){
+            div_mensagem.innerHTML += "<br><br>Os filhos não poderão ir na montanha russa!";
+        } else {
+            div_mensagem.innerHTML += "<br><br>Os filhos estão liberados para irem na montanha russa!";
+            gasto += ValorMontanha;
+        }
+
+        //TORRE DO ESPETÁCULO
+        //validação torre do espetáculo
+        if (PesoEsposo + PesoEsposa + PesoFilhos >= MaxElevador){
+            div_mensagem.innerHTML += "<br><br>Alguém precisa para o elevador funcionar! Peso máximo de 300Kg";
+        } else {
+            div_mensagem.innerHTML += "<br><br><br>Torre do espetáculo/Elevador está liberado para todos juntos!<br>";
+            gasto += ValorTorre*3;
+        }
+
+        //CARRINHO BATE-BATE
+        //validação esposo
+        if (PesoEsposo < PesoaMinCarrinho || PesoEsposo > PesoMaxCarrinho) {
+            div_mensagem.innerHTML += "<br><br>Esposo não poderá ir no carrinho bate-bate"
+        } else {
+            div_mensagem.innerHTML +="<br><br>O Esposo está liberado para ir no carrinho bate-bate!";
+            gasto += ValorCarrinho;
+        }
+
+        //validação esposa
+        if (PesoEsposa < PesoaMinCarrinho || PesoEsposa > PesoMaxCarrinho) {
+            div_mensagem.innerHTML += "<br><br>Esposa não poderá ir no carrinho bate-bate"
+        } else {
+            div_mensagem.innerHTML +="<br><br>A Esposa está liberada para ir no carrinho bate-bate!";
+           gasto += ValorCarrinho;
+        }
+        
+        //validação filhos
+        if (PesoFilhos < PesoaMinCarrinho || PesoFilhos > PesoMaxCarrinho) {
+            div_mensagem.innerHTML += "<br><br>Os filhos não poderá ir no carrinho bate-bate"
+        } else {
+            div_mensagem.innerHTML +="<br><br>Os Filhos estão liberados para irem no carrinho bate-bate!";
+            gasto += ValorCarrinho;
+        }
+
+        //BARCO VIKING
+        //valicação esposo
+        if ((PesoEsposo < PesoMinViking || PesoEsposo > PesoMaxViking) || (AlturaEsposo < AlturaMinViking || AlturaEsposo > AlturaMaxViking)){
+            div_mensagem.innerHTML += "<br><br>O Esposo não poderá ir no barco viking!";
+        } else {
+            div_mensagem.innerHTML += "<br><br><br>O Esposo está liberado para ir no barco viking!";
+            gasto += ValorBarco;
+        }
+        
+        //valicação esposa
+        if ((PesoEsposa < PesoMinViking || PesoEsposa > PesoMaxViking) || (AlturaEsposa < AlturaMinViking || AlturaEsposa > AlturaMaxViking)){
+            div_mensagem.innerHTML += "<br><br>A Esposa não poderá ir no barco viking!";
+        } else {
+            div_mensagem.innerHTML += "<br><br>A Esposa está liberado para ir no barco viking!";
+            gasto += ValorBarco;
+        }
+        
+        //valicação filhos
+        if ((PesoFilhos < PesoMinViking || PesoFilhos > PesoMaxViking) || (AlturaFilhos < AlturaMinViking || AlturaFilhos > AlturaMaxViking)){
+            div_mensagem.innerHTML += "<br><br>Os filhos não poderão ir no barco viking!";
+        } else {
+            div_mensagem.innerHTML += "<br><br>Os filhos estão liberados para irem no barco viking!";
+            gasto += ValorBarco;
+        }
+
+        div_mensagem.innerHTML += `<br><br><br>Seu gasto total no parque foi de: <b>R$${gasto}<b>.`;
+
+        
+
+    }
+
+</script>

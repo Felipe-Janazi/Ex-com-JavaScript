@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 24</title>
+</head>
+<body>
+
+    <h1>Atividade 24</h1>
+
+    Informe um número entre 0 e 100: <input id="input_numero"> <br><br>
+
+    <button onclick="calcular()">Ver divisores</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+        div_mensagem.innerHTML = "";
+        var numero = Number (input_numero.value);
+        var primo = 0;
+
+        if (numero >= 0 && numero <= 100) {
+
+            for (var contador = 1; contador <= numero; contador++) {
+
+                var calculo = numero % contador;
+
+                if (calculo == 0) {
+                    primo += 1;
+                    
+                    div_mensagem.innerHTML += `${contador} <br>`;
+                }
+            }
+        } else {
+            alert("Informe um valor correto")
+        }
+
+        if (primo == 2) {
+            div_mensagem.innerHTML += `O número ${numero} é um número primo`;
+        }
+    }
+</script>

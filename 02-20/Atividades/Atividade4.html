@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+<body>
+    <h1>
+        Atividade 4
+    </h1>
+
+    Nome do guerreiro: 
+    <input id="nome"> <br> <br>
+
+
+    Ki normal:
+    <input id="kiNormal"> <br> <br>
+
+    <button onclick="kiguerreiro()">
+        Ver ki em cada forma:
+    </button>
+</body>
+</html>
+
+<script>
+
+    function kiguerreiro() { 
+
+        var n1 = Number (kiNormal.value); 
+
+        var s1 = n1 * 50; 
+        var s2 = n1 * 100; 
+
+        alert ("O ki de seu guerreiro " + nome.value + " é de " + s1 + " em sua forma Sayajin 1");
+
+        alert ("O ki de seu guerreiro " + nome.value + " é de " + s2 + " em sua forma Sayajin 2");
+
+    }
+</script>

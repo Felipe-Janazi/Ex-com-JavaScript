@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 20</title>
+</head>
+<body>
+
+    <h1>Atividade 20</h1>
+
+    
+    Informe quantos depósitos você fez no Banco: <input id="input_deposito"> <br>
+
+    Informe o quanto você deposita: <input id="input_valor"> <br>
+
+    <button onclick="calcular()">Acompanhar grana</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        div_mensagem.innerHTML = '';
+        
+        var deposito = Number (input_deposito.value);
+        var valor = Number (input_valor.value);
+        var bonus = 0;
+        
+    for (var cont = 1; cont <= deposito; cont++) {
+        var calculo = cont % 3;
+
+        var valorDepositado = cont * valor + bonus;
+
+        if (calculo == 0) {
+ 
+            var valorBonus = valorDepositado * 0.01 + valorDepositado;
+            bonus += valorDepositado * 0.01;
+
+            div_mensagem.innerHTML += `${cont}º Mês: R$ ${valorBonus} <br>`;
+
+        } else {
+            div_mensagem.innerHTML += `${cont}º Mês: R$ ${valorDepositado} <br>`;
+        }
+    }
+    div_mensagem.innerHTML += `Total guardado: R$${valorDepositado}`;
+   }
+ </script>

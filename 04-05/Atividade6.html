@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 6</title>
+</head>
+<body>
+
+    <h1>Atividade 6</h1>
+    
+    Informe a pessoa que você mais ama na vida: <input type="text" id="input_pessoa"> <br>
+
+    Informe o quanto ama essa pessoa: <input type="number" id="input_amor">  <br>
+
+    <button onclick="calcular()">Expressas Amor</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var amor = Number (input_amor.value);
+        var pessoa = input_pessoa.value;
+        var repeticao = 1;
+
+        for (   ; repeticao <= amor; repeticao++ ) {
+
+            div_mensagem.innerHTML += `${pessoa}, eu te amo! Sempre lembre disso! <br> `; 
+        }
+    }
+</script>

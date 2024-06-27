@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 9</title>
+</head>
+<body>
+
+    <h1>Atividade 9</h1>
+    
+    Informe um número: <input id="input_numero"> <br>
+
+    Informe uma frase: <input id="input_frase"> <br>
+
+    <button onclick="calcular()">papagaio</button> <br>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+        var numero = Number (input_numero.value);
+        var frase = input_frase.value;
+
+        var texto = '';
+
+        for (var numero2 = 1; numero2 <= numero; numero2++) {
+         texto += frase;
+        }
+        
+        for (var alert2 = 1; alert2 <= numero; alert2++) {
+            alert(texto);
+        }
+
+       
+    }
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+</head>
+<body>
+    <h1>
+        Atividade 3
+    </h1>
+
+    Qual o valor da passagem?
+    <input id="valorPassagem"> <br> <br>
+
+    Quantas passagens você fará por mês? 
+    <input id="passagensMes"> <br> <br> 
+
+
+    <button onclick="valor()">
+        Ver economia
+    </button>
+
+</body>
+</html>
+
+<script> 
+    function valor() { 
+
+        var n1 = Number (valorPassagem.value);
+        var n2 = Number (passagensMes.value); 
+
+        var conta = n1 * n2 / 2; 
+
+        alert ( "Você economizará " + conta + " reais por mês!" ); 
+    
+
+    }
+</script>

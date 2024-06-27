@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 22</title>
+</head>
+
+<body>
+
+    <h1>Atividade 22
+    </h1>
+
+    Qual sua meta de economia?
+    <input id="input_meta"> <br><br>
+
+    Quanto possui guardado?
+    <input id="input_guardado"> <br><br>
+
+    <button onclick="calcular()">Analisar economia</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+
+        var meta = Number(input_meta.value);
+        var guardado = Number(input_guardado.value);
+        var metaUltrapassada = guardado - meta;
+        var metaAAtingir = meta - guardado;
+
+        if (guardado > meta) {
+
+            div_mensagem.innerHTML = ` Parabéns, meta alcançada!. Meta ultrapassada em ${metaUltrapassada}`;
+        }
+
+        if (guardado == meta) {
+
+            div_mensagem.innerHTML = ` Parabéns, meta alcançada!`;
+        }
+
+        if (guardado < meta) {
+
+            div_mensagem.innerHTML = ` Força! Ainda em busca da meta! Falta R$${metaAAtingir}`;
+        }
+    }
+</script>

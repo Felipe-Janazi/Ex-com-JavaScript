@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    Nome: <input type="text" id="input_nome"> <br><br>
+    Sobrenome: <input type="text" id="input_sobrenome"><br><br>
+    Idade: <input type="text" id="input_idade"><br><br>
+
+    <button onclick="cadastrar()">Cadastrar pessoa</button>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+
+var lista_usuario = [];
+
+    function cadastrar() {
+
+        var nome = input_nome.value;
+        var sobrenome = input_sobrenome.value;
+        var idade = Number (input_idade.value);
+ 
+        var usuario = {
+            nome: nome, 
+            sobrenome: sobrenome,
+            idade: idade,
+        }
+
+        console.log(usuario);
+        div_mensagem.innerHTML = usuario;
+
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 4</title>
+</head>
+<body>
+
+    <h1>Desafio 4</h1>
+
+    Informe a forma de pagamento: <br>
+    <input id="input_pagamento"> <br><br>
+
+    <button onclick="calcular()">Analisar compra</button>
+    
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var pagamento = input_pagamento.value;
+
+        /*if (pagamento ==  'dinheiro' || pagamento == 'debito') {
+            div_mensagem.innerHTML = `Você terá que pagar a vista`;
+        } else {
+            div_mensagem.innerHTML = `Pagamento poderá ser parcelado`;
+        }*/
+
+
+        if (pagamento ==  'Dinheiro' || pagamento == 'Cartão de débito') {
+            div_mensagem.innerHTML = `<br>Você terá que pagar a vista`;
+        } 
+
+        if (pagamento ==  'Cartão de crédito' || pagamento == 'Boleto') {
+            div_mensagem.innerHTML = `<br>Pagamento poderá ser parcelado`;
+        } 
+    }
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 7</title>
+</head>
+<body>
+
+    <h1>Calculadora de cansaço aprimorada do aluno SPTech</h1>
+
+    Informe o maior de transporte: <br>
+    <input id="input_transporte"> <br><br>
+
+    Distância da casa em km: <br>
+    <input id="input_distancia"> <br><br>
+
+    <button onclick="calcular()">Calcular cansaço</button>
+    
+</body>
+</html>
+
+<script> 
+
+function calcular() {
+    var transporte = input_transporte.value;
+    var distancia = Number (input_distancia.value); 
+
+    if (distancia <= 10) {
+        if (transporte == 'carro' || transporte == 'metro' || transporte == 'onibus') {
+            alert ("Tá tranks...")
+        } else {
+            alert ("É... um pouco cansado...")
+        }
+    } else {
+        if (transporte == 'carro') {
+            alert  ("É... um pouco cansado...")
+        }
+
+        if (transporte == 'metro' || transporte == 'onibus') {
+            alert  ("Bem cansado...");
+        }
+
+        if (transporte == 'bicicleta') {
+            alert ("Vish... tá só o pó...")
+        }
+    }
+}
+</script>

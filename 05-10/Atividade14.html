@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    Digite um número: <input id="input_numero">
+
+    <button onclick="registrar()">Registrar</button>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+
+    var lista_numero = [];
+    function registrar() {
+        div_mensagem.innerHTML = '';
+        var numero = Number(input_numero.value);
+
+        lista_numero.push(numero);
+
+        var menor_num = lista_numero[0];
+        var maior_num = lista_numero[0];
+
+        for (var index = 0; index < lista_numero.length; index++) {
+
+            var numero_atual = lista_numero[index];
+
+        div_mensagem.innerHTML += `${index + 1}º Numero: ${numero_atual} <br>`
+
+        if (numero_atual > menor_num) {
+            menor_num = numero_atual;
+        }
+
+        if (numero_atual < maior_num) {
+            maior_num = numero_atual;
+        }
+
+    }
+
+
+        div_mensagem.innerHTML += `Menor: ${maior_num} <br>
+        Maior: ${menor_num}`
+    }
+</script>

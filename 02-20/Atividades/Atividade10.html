@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 10</title>
+</head>
+<body>
+    
+    <h1> Atividade 10</h1>
+
+    Votos do candidato Jp: 
+    <input id="input_C1"><br><br>
+
+    Votos do candidato Braian: 
+    <input id="input_C2"><br><br>
+
+    Votos em branco: 
+    <input id="input_Vbranco"><br><br>
+
+    Votos nulo:
+    <input id="input_Vnulo"><br><br>
+
+    <button onclick="eleicao()">
+        Resultado da Eleição 
+    </button>
+
+    <div id="div_votos"> 
+
+    </div>
+
+</body>
+</html>
+
+<script> 
+
+var Jp = Number (input_C1.value);
+var Braian = Number (input_C2.value); 
+var Branco = Number (input_Vbranco.value);
+var Nulo = Number (input_Vnulo.value); 
+
+function eleicao() {
+
+    Jp = Number (input_C1.value);
+    Braian = Number (input_C2.value); 
+    Branco = Number (input_Vbranco.value);
+    Nulo = Number (input_Vnulo.value); 
+
+
+    var total = Jp + Braian + Branco + Nulo; 
+    var totalJp = Jp * 100 / total;
+    var totalBraian = Braian * 100 / total; 
+    var totalIn = (Branco + Nulo) * 100 / total; 
+    
+
+    div_votos.innerHTML = `Total de votos ${total} <br> 
+
+    Jp: ${totalJp}% (${Jp} votos) <br> 
+
+    Braian: ${totalBraian}% (${Braian} votos) <br> 
+
+    Inválidos: ${totalIn}% (${Branco + Nulo}votos)
+    
+    
+    `;
+}
+
+
+</script>

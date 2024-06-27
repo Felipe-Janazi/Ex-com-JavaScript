@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 22</title>
+</head>
+
+<body>
+
+    <h1>Atividade 22</h1>
+
+    Informe o limite inferior da amostragem: <input id="input_inferior"> <br> <br>
+
+    Informe o limite superior da amostragem: <input id="input_superior"> <br><br>
+
+    Informe um número para testar a divisibilidade: <input id="input_divisao"> <br><br>
+
+    <button onclick="calcular()">Contar</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+        div_mensagem.innerHTML = "";
+        var inferior = Number(input_inferior.value);
+        var superior = Number(input_superior.value);
+        var divisao = Number(input_divisao.value);
+
+        var exibidos = 0;
+        var somaExibidos = 0;
+        var mediaExibidos = 0;
+        var maiorNumero = 0;
+        var menorNumero = 0;
+        var numero = 0;
+        var n = 0;
+
+        if (inferior > 1) {
+
+            if (superior < 100 && superior > inferior) {
+
+                if (divisao >= 3 && divisao <= 10) {
+
+                    // AQUI COMEÇA 
+
+                    for (; inferior <= superior; inferior++) {
+                        var calculo = inferior % divisao;
+
+                        if (calculo == 0) {
+                            exibidos += 1;
+                            somaExibidos += inferior; 
+                            mediaExibidos = somaExibidos / exibidos;
+                            numero += `${inferior}, `;
+                            maiorNumero = inferior
+
+                            if (n == 0) {
+                                menorNumero = inferior;
+                                n++;
+                            }
+                        }
+
+                    }
+
+                    div_mensagem.innerHTML += `NÚMEROS: ${numero}  <br> <br>
+
+                                            QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: ${exibidos} <br> <br>  
+
+                                            SOMATÓRIO DOS NÚMEROS EXIBIDOS: ${somaExibidos} <br> <br> 
+
+                                            MÉDIA DOS NÚMEROS EXIBIDOS: ${mediaExibidos} <br> <br> 
+
+                                            MAIOR NÚMERO EXIBIDO: ${maiorNumero}  <br> <br> 
+
+                                            MENOR NÚMERO EXIBIDO: ${menorNumero}   <br> <br> `;
+
+
+                } else {
+                    alert("Informe um número para a divisão que esteja entre 3 e 10")
+                }
+
+            } else {
+                alert("Informe um número maior que o número inferior e menor que 100!")
+            }
+
+        } else {
+            alert("Informe um número maior que o 1!");
+        }
+    }
+</script>

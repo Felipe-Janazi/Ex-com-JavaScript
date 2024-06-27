@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+<body>
+
+    <h1>Atividade 4</h1>
+
+    Informe os filmes que mais gosta: <input type="text" id="input_filme"> <br><br>
+
+    <button onclick="cadastrar()">Cadastrar filme</button> <br><br>
+
+    <button onclick="favorito()">Ver favoritos</button> <br><br>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    var lista_filme = [];
+
+    function cadastrar() {
+
+        var filme = input_filme.value;
+
+        lista_filme.push(filme);
+
+    }
+
+    function favorito() {
+
+        var tamanho = lista_filme.length;
+
+        div_mensagem.innerHTML += ` ${lista_filme} <br>
+        
+        Total: ${tamanho} <br>
+        
+        O que filme que mais gosta é ${lista_filme[0]}. <br>
+
+        E desses, o que menos gosta é ${lista_filme[tamanho - 1]}`;
+    }
+</script>

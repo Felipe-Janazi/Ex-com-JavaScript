@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 18</title>
+</head>
+<body>
+    
+    <h1>Atividade 18</h1>
+
+    Informe o nome das músicas que você gosta: <input type="text" id="input_musica"> <br>
+    <button onclick="cadastrar()">Cadastrar</button>  <br><br>
+
+    <button onclick="exibir()">Exibir</button><br><br>
+
+    De: <input type="text" id="input_de"> <br>
+    Até: <input type="text" id="input_ate"> <br>
+    <button onclick="filtrar()">Filtrar</button> <br><br>
+
+
+    <div id="div_mensagem"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    var lista_musica = [];
+
+    function cadastrar() {
+        var musica = input_musica.value;
+
+        lista_musica.push(musica);
+
+    }
+
+    function exibir() {
+        div_mensagem.innerHTML = '';
+
+        div_mensagem.innerHTML = `${lista_musica}`;
+    }
+
+    function filtrar() {
+        div_mensagem.innerHTML = '';
+
+        var de = input_de.value;
+        var ate = input_ate.value;
+
+        for (var cont = de - 1; cont <= ate - 1; cont++) {
+
+            div_mensagem.innerHTML += `${lista_musica[cont]}, `;
+
+        }
+
+    }
+</script>

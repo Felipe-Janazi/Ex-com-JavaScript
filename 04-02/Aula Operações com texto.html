@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consistência de dados</title>
+    
+</head>
+<body>
+    <h1>Operações com texto</h1>
+
+    <label>
+        Digite uma frase:
+        <input id="input_frase"> <br><br>
+    </label>
+   <button onclick="analisar()"> Analisar </button>
+
+
+    <div id="div_mensagem"></div>
+   
+</body>
+</html>
+<script>
+
+    function analisar() {
+        var frase = input_frase.value;
+
+        var tamanho_frase = frase.length;
+        div_mensagem.innerHTML = `Comprimento do texto: ${tamanho_frase}`;
+
+        if (tamanho_frase >= 8) {
+            div_mensagem.innerHTML += `<br> - Possui 8 letras ou mais`;
+        } else {
+            div_mensagem.innerHTML += `<br> - Possui MENOS que 8 letras`;
+        }
+
+        var comeca_a = frase.startsWith('a');
+        div_mensagem.innerHTML += `<br>- Começa com a? ${comeca_a}`;
+
+        var comeca_hashtag = frase.startsWith('#');
+        div_mensagem.innerHTML += `<br>- Começa com #? ${comeca_hashtag}`;
+        
+        var termina_com = frase.endsWith('.com');
+        div_mensagem.innerHTML += `<br>- Termina com .com? ${termina_com}`;
+
+        var primeira_letra = frase[0];
+        div_mensagem.innerHTML += `<br> - Primeira letra: ${primeira_letra}`;
+
+        var terceira_letra = frase[2];
+        div_mensagem.innerHTML += `<br> - Terceira letra: ${terceira_letra}`;
+
+        var ultima_letra = frase[tamanho_frase - 1]; // PEga a frase completa pelo tamanho e seleciona a ultima letra por causa dos []
+        div_mensagem.innerHTML += `<br> - A última letra é: ${ultima_letra}`;
+        
+        var indice_arroba = frase.indexOf('@');
+        div_mensagem.innerHTML += `<br> - Indice do @: ${indice_arroba}`;
+
+        var frase_maiuscula = frase.toUpperCase();
+        var frase_minuscula = frase.toLowerCase();
+
+        div_mensagem.innerHTML += `<br> - Frase maiuscula: ${frase_maiuscula}
+        <br> - Frase minuscula: ${frase_minuscula}`;
+
+        var frase_sem_espacos = frase.replaceAll (' ', '');
+        div_mensagem.innerHTML += `<br>- A frase sem espaços é: ${frase_sem_espacos}`;
+
+        var frase_formatada = frase.replaceAll ('a', '4')
+        .replaceAll ('e', '3')
+        .replaceAll('s', '5');
+
+        div_mensagem.innerHTML += `<br> - Trocando para 4, 3 e 5: ${frase_formatada}`;
+        
+    }
+</script>

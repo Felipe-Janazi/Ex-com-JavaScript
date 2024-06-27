@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 14</title>
+</head>
+<body>
+    
+    <h1>Atividade 14</h1>
+
+
+    Informe sua idade: <input oninput="calcular()" type="number" id="input_idade"> <br>
+
+    <div id="div_mensagem"></div>
+
+
+</body>
+</html>
+
+<script>
+    function calcular() {
+        div_mensagem.innerHTML = '';
+
+        var idade = Number (input_idade.value);
+
+        for (var contador = 1; contador <= idade; contador++) {
+
+            if (contador <= 4) {
+                div_mensagem.innerHTML += `${contador} anos (Primeira infância) <br>`;
+            } else if (contador > 4 && contador <= 6) {
+                div_mensagem.innerHTML += `${contador} anos (Pré-escolar) <br>`
+            } else if (contador > 6 && contador <= 10) {
+                div_mensagem.innerHTML += `${contador} anos (Segunda infância) <br>`
+            } else if (contador > 10 && contador <= 18) {
+                div_mensagem.innerHTML += `${contador} anos (Adolescência) <br>`
+            } else if (contador > 18 && contador <= 50) {
+                div_mensagem.innerHTML += `${contador} anos (Adulto) <br>`
+            } else if (contador > 50 && contador <= 100) {
+                div_mensagem.innerHTML += `${contador} anos (Melhor idade) <br>`
+            } else if (contador > 100) {
+                div_mensagem.innerHTML += `${contador} anos (Matusalém) <br>`
+            }
+        }
+    }
+</script> 

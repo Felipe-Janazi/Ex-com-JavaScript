@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 25</title>
+</head>
+<body>
+
+    <h1>Atividade 25</h1>
+
+    Informe um número entre 10 e 500: <input id="input_numero"> <br><br>
+
+    <button onclick="calcular()">Somar Pares</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+        div_mensagem.innerHTML = "";
+    
+        var numero = Number (input_numero.value);
+
+        if (numero >= 10 && numero <= 500) {
+
+            for (var contador = 0; contador <= numero; contador++) {
+
+                var calculo = contador % 2;
+
+                if (calculo == 0) {
+                    div_mensagem.innerHTML += `${contador} <br> `;
+                }
+            }
+        } else {
+            alert ("Número informado incorreto, por gentileza informe corretamente")
+        }
+    }
+</script>

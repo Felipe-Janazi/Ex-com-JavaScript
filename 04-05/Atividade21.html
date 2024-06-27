@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 20</title>
+</head>
+<body>
+
+    <h1>Atividade 20</h1>
+
+    
+    Informe quantos depósitos você fez no Banco: <input id="input_deposito"> <br>
+
+    Informe o quanto você deposita: <input id="input_valor"> <br>
+
+    <button onclick="calcular()">Acompanhar grana</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        div_mensagem.innerHTML = '';
+        
+        var deposito = Number (input_deposito.value);
+        var valor = Number (input_valor.value);
+        var bonusAdd = 0;
+
+        for (var contador = 1; contador <= deposito; contador++) {
+
+            var calculo = (contador * valor) + bonusAdd;
+
+            
+            
+            var multiplo = contador % 3;
+            if (multiplo == 0){
+                var bonus = calculo + valor * 0.01;
+                bonusAdd += valor * 0.01;
+                
+                div_mensagem.innerHTML += `${contador}º Mês: R$ ${bonus} <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTKLPDDmt5e9vdRvN6ZmmpXwLFK5s9ykjK63qtSQ-HCg&s" width=10px> <br>`;
+                
+            } else {
+                
+                div_mensagem.innerHTML += `${contador}º Mês: R$ ${calculo} <br>`;
+            }
+            var final = (contador * valor) + bonusAdd;
+            
+        }
+        div_mensagem.innerHTML += `Total guardado: R$ ${final}`;
+    }
+ </script>

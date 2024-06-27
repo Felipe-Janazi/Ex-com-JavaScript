@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 13</title>
+</head>
+<body>
+
+    <h1>Atividade 13</h1>
+    
+    Informe de quantos em quantos dias você faz musculação: <input id="input_musculacao"> <br>
+
+    <button onclick="calcular()">Exibir rotina mensal</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+    div_mensagem.innerHTML = '';
+    var musculacao = Number (input_musculacao.value);
+    
+        for ( contador = 1; contador<30; contador++) {
+            var calculo = contador % musculacao;
+
+            if(contador == 1) {
+                div_mensagem.innerHTML = `Dia ${contador} - Musculação<br>`
+            }
+            if (calculo == 0) {
+                div_mensagem.innerHTML += `Dia ${contador + 1} - Musculação<br>`;
+            }  else {
+                div_mensagem.innerHTML += `Dia ${contador + 1} - Comer, dormir etc <br>`
+            }
+        
+    }
+
+    }
+</script>

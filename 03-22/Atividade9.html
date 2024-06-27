@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 9</title>
+</head>
+<body>
+
+    <h1>Atividade 9</h1>
+    Informe a altura incial desejada: <br>
+    <input id="input_inicial"> <br><br>
+
+    Informe a altura final: <br>
+    <input id="input_final"> <br><br>
+
+    Informe sua altura: <br>
+    <input id="input_altura"> <br><br>
+
+    Infome seu nome: <br>
+    <input id="input_nome"> <br> <br>
+
+    <button onclick="calcular()">Varificar candidato</button> <br><br>
+    
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script> 
+
+function calcular() {
+    var inicial = Number (input_inicial.value);
+    var final = Number (input_final.value);
+    var altura = Number (input_altura.value); 
+    var nome = input_nome.value;
+
+    if (inicial > 1 && final > inicial) {
+
+        if (altura >= inicial && altura <=  final) {
+
+            div_mensagem.innerHTML += `<br>O candidato ${nome}, com altura de ${altura} metros, participará do processo de seleção de piloto`;
+        } else {
+            div_mensagem.innerHTML += `<br>Infelizmente, o candidato ${nome}, com altura de ${altura} metros, não atende os requisitos da seleção`;
+        }
+
+    } else {
+        alert("Intervalo da altura de seleção é inválida! A altura inicial deve ser maior que 1 e a altura final deve ser maior que a altura inicial")
+    }
+    
+
+
+}
+</script>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 6</title>
+</head>
+<body>
+    <h1>
+        Atividade 6
+    </h1>
+
+    Digite 1 número: 
+    <input id="pn1"><br><br>
+
+    Digite outro número:
+    <input id="pn2"><br><br>
+
+    <button onclick="soma()">
+        Soma
+    </button><br><br>
+
+    <button onclick="subtracao()">
+        Diferença
+    </button><br><br>
+
+    <button onclick="multiplicacao()">
+        Produto
+    </button><br><br>
+
+    <button onclick="divisao()">
+        Razão
+    </button><br><br>
+</body>
+</html>
+
+<script> 
+    function soma() {
+
+        var n1 = Number (pn1.value);
+        var n2 = Number (pn2.value); 
+        var adicao = n1 + n2; 
+
+        alert ("A soma dos números informados é de " + adicao);
+    }
+
+    function subtracao() {
+
+        var n1 = Number (pn1.value); 
+        var n2 = Number (pn2.value);
+        var subtrair = n1 - n2;
+
+        alert ( "A subtração dos dois números informados é de " + subtrair); 
+    }
+
+    function multiplicacao() {
+
+        var n1 = Number (pn1.value);
+        var n2 = Number (pn2.value);
+        var multiplicar = n1 * n2;
+
+        alert ("A multiplicação dos dois números informados é de " + multiplicar); 
+
+    }
+
+    function divisao (){ 
+
+        var n1 = Number (pn1.value);
+        var n2 = Number (pn2.value); 
+        var dividir = n1 / n2; 
+
+        alert (" A divisão dos dois números informados é de " + dividir);
+    }
+</script>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+</head>
+
+<body>
+
+    <h1> Pré AC1</h1>
+
+    Informa a distância percorrida: <br>
+    <input id="input_distancia"> <br><br>
+
+    Informe o tempo de duração da viagem: <br>
+    <input id="input_tempo"> <br><br>
+
+    Informe a quantidade de passageiros: <br>
+    <input id="input_qtdPassageiro"> <br><br>
+
+    Horario de inicio da viagem: <br>
+    <input id="input_inicio"> <br><br>
+
+    <button onclick="calcular()"> Realizar Viagem</button> <br><br>
+
+    <button onclick="encerramento()">Encerrar o dia</button> <br><br>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var horas_trabalhadas = 0;
+    var faturamento = 0;
+    var total_combustivel = 0;
+    var lucro_liquido = 0;
+
+    function calcular() {
+
+        horas_trabalhadas += 0;
+        faturamento += 0;
+        total_combustivel += 0;
+        lucro_liquido += 0;
+
+        var distancia = Number(input_distancia.value);
+        var tempo = Number(input_tempo.value);
+        var passageiro = Number(input_qtdPassageiro.value);
+        var inicio = Number(input_inicio.value);
+
+        var custo_corrida = distancia * 0.77; //CUSTO DA CORRIDA SEM NENHUM ACRÉSCIMO OU ALTERAÇÃO.
+        var estimativa_tempo = distancia * 1.8; //TEMPO DA CORRIDA SENDO ESTIMADO.
+
+        var estimativa_mais_10 = estimativa_tempo * 0.1 + estimativa_tempo;  // CASO SEJA MAIOR QUE O TEMPO INFORMADO 
+        var estimativa_menos_10 = estimativa_tempo - estimativa_tempo * 0.1; //CASO SEJA MENOR QUE O TEMPO INFORMADO 
+
+        var estimativa_do_tempo = estimativa_tempo;
+
+        var valor_de_acrescimo = 0;
+        var valor_de_desconto = 0;
+        if (tempo >= estimativa_mais_10) {
+            var acrescimo_viagem = (custo_corrida * 0.07) //COLOCANDO UM ACRÉSCIMO SE FOR MAIS QUE 10% DO ESTIMADO
+            valor_de_acrescimo = acrescimo_viagem;
+        }
+        if (tempo < estimativa_menos_10) {
+            var desconto_viagem = (custo_corrida * 0.08)  // DANDO UM DESCONTO SE FOR MENOS QUE 10% DO ESTIMADO 
+            valor_de_desconto = desconto_viagem;
+        }
+
+        var passageiro_extra = passageiro - 1; // CALCULANDO A QUANTIDADE DE PASSAGEIROS EXTRAS
+        var passageiro_extra_valor = passageiro_extra * 3;  // CALCULANDO O VALOR DOS PASSAGEIROS EXTRAS.
+
+        var bonus_para_cliente_adicional = 0;
+        var acrescimo_adicional = 0;
+        if (inicio >= 0) {
+            if (inicio <= 6) {
+                var bonus_horario = (custo_corrida * 0.09)  // DANDO DESCONTO DE HORARIO 
+                bonus_para_cliente_adicional = bonus_horario;
+            }
+        }
+
+        if (inicio > 20) {
+            if (inicio <= 23) {
+                var adicional_horario = (custo_corrida * 0.11) // COBRANDO MAIS PELO HORARIO 
+                acrescimo_adicional = adicional_horario;
+            }
+        }
+
+        var custo_ate_aqui = custo_corrida + valor_de_acrescimo - valor_de_desconto + passageiro_extra_valor - bonus_para_cliente_adicional + acrescimo_adicional;
+        // VALOR TOTAL GASTO ATÉ O MOMENTO COM TODOS OS DESCONTOS E ACRPESCIMOS
+
+        var litros_combustivel = (distancia / 12);
+        var valor_combustivel = litros_combustivel * 4;
+        // CADA UM REAL SÃO 3 KM
+
+        horas_trabalhadas += tempo;
+        faturamento += custo_ate_aqui;
+        total_combustivel += valor_combustivel;
+
+        var calculo_liquido = custo_ate_aqui - valor_combustivel;
+        lucro_liquido += calculo_liquido;
+
+
+        div_mensagem.innerHTML += `A viagem foi iniciada às ${inicio} horas e tinha estimativa de ${estimativa_do_tempo} minutos e durou ${tempo} minutos, percorrendo ${distancia} KM, com ${passageiro} passageiros, totalizando R$${custo_ate_aqui} do preço da corrida. Com essa distância, foram consumidos ${litros_combustivel} litros de gasolina, totalizando R$${valor_combustivel} de consumo. <br> <br> `;
+
+    }
+
+    function encerramento() {
+
+        horas_trabalhadas += 0;
+        faturamento += 0;
+        total_combustivel += 0;
+        lucro_liquido += 0;
+
+        horas_trabalhadas = horas_trabalhadas / 60;
+
+        if (horas_trabalhadas > 6) {
+
+            div_mensagem.innerHTML = ` <h2> EXTRATO DO DIA </h2>
+
+            Total de Horas Trabalhadas: ${horas_trabalhadas} <br> 
+
+            Faturamento Total: R$${faturamento} <br> 
+
+            Total de Combustível Consumido: R$${total_combustivel} <br> 
+
+            Lucro Líquido: R$${lucro_liquido}  <br> 
+
+            Você já trabalhou bastante hoje! Hora de descansar!`;
+        } else {
+
+            div_mensagem.innerHTML = ` <h2> EXTRATO DO DIA </h2>
+
+            Total de Horas Trabalhadas: ${horas_trabalhadas} <br> 
+
+            Faturamento Total: R$${faturamento} <br> 
+
+            Total de Combustível Consumido: R$${total_combustivel} <br> 
+
+            Lucro Líquido: R$${lucro_liquido}  <br> 
+            
+            Você ainda deve trabalhar mais até cumprir sua cota do dia!`;
+        }
+
+
+    }
+
+</script>

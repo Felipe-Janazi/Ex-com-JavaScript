@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Aula 02 Operações Aritiméticas e Váriaveis</title>
+</head>
+<body>
+    
+    <h1>
+        Calculadora SPTech
+    </h1>
+
+    Numero 1: <input id="input_n1"> <br><br>
+    Numero 2: <input id="input_n2"> <br><br>
+
+    <button onclick="multiplicar()">  Multiplicar  </button>
+
+    <button onclick="divisao()"> Dividir </button>
+
+    <button  onclick="subtracao()"> Subtrai </button>
+
+    <button onclick="soma()"> Somar </button>
+
+</body>
+</html>
+
+<script>
+
+    var n1 = 0;
+    var n2 = 0;
+
+    function multiplicar() {
+            n1 = input_n1.value; 
+            n2 = input_n2.value; 
+        var multiplicacao = n1 * n2;
+
+        alert ( n1 + ' * ' + n2  + ' = ' + multiplicacao );
+
+    }
+
+    function  divisao() {
+            n1 = input_n1.value; 
+            n2 = input_n2.value; 
+        var divisao = n1 / n2;
+
+        alert (n1 + ' / ' + n2 + ' = ' + divisao);
+
+    }
+
+    function subtracao() {
+            n1 = input_n1.value; 
+            n2 = input_n2.value; 
+        var subtrair = n1 - n2;
+
+        alert (n1 + ' - ' + n2 + ' = ' + subtrair);
+
+    }
+
+    function soma() {
+            n1 = Number (input_n1.value)
+            n2 = Number (input_n2.value)
+        var somar = n1 + n2;
+
+        alert (n1 + ' + ' + n2 + ' = ' + somar);
+    }
+
+</script>

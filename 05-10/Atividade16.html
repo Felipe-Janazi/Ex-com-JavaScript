@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 16</title>
+</head>
+<body>
+
+    <h1>Atividade 16</h1>
+
+    informe o nome do produto: <input id="input_nome"> <br>
+
+    Informe o preço da compra: <input id="input_preco"> <br>
+
+    <button onclick="cadastrar()">Cadastrar</button> <br>
+
+    <button onclick="verificar()">Relatório de estoque</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+var lista_nome = [];
+var lista_preco = [];
+
+    function cadastrar(){
+
+        var nome = input_nome.value;
+        var preco = Number (input_preco.value);
+
+        lista_nome.push(nome);
+        lista_preco.push(preco);
+
+
+    }
+
+    function verificar() {
+        div_mensagem.innerHTML = '';
+
+        var tamanho_nome = lista_nome.length - 1;
+        var tamanho_preco = lista_preco.length - 1;
+
+        var maior_num = lista_preco[0];
+        var nomeMaior = '';
+        var menor_num = lista_preco[0];
+        var nomeMenor = '';
+        
+        var valorTotal = 0;
+        var cont = 0;
+        var media = 0
+
+        div_mensagem.innerHTML += `Total de produtos: ${tamanho_nome +1} <br> `;
+
+        for (var index = 0;  index <= tamanho_nome; index++) {
+
+            
+            var precoAtual = lista_preco[index];
+
+            valorTotal += precoAtual;
+
+            var vender = precoAtual * 1.25;
+            cont++;
+
+            media += vender;
+
+            div_mensagem.innerHTML += ` Produto ${index +1}: ${lista_nome[index]}  <br> 
+
+            Preço de compra: R$${lista_preco[index]}. Vender por R$${vender}  <br>`;
+
+            if(precoAtual > maior_num) {
+                maior_num = precoAtual;
+                nomeMaior = lista_nome[index]
+            }
+            if(precoAtual < menor_num) {
+                menor_num = precoAtual;
+                nomeMenor = lista_nome[index]
+            }
+
+            var mediaFinal = media / cont;
+        }
+
+        div_mensagem.innerHTML += `Maior número: ${maior_num} <br>
+        Menor número: ${menor_num} <br>
+        Soma de todos produtos: ${valorTotal} <br>
+        Média de venda: ${mediaFinal} <br>`
+    }
+</script>
+
+  

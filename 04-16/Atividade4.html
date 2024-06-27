@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+<body>
+
+    Informe a quantidade de números que serão sorteados: <input oninput="calcular()" id="input_numero"> <br><br>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+    div_mensagem.innerHTML = '';
+        var numero = Number (input_numero.value);
+        var texto = "";
+        var sorteados1 = 0;
+        var sorteados2 = 0;
+        var sorteados3 = 0;
+        var sorteados4 = 0;
+
+        var maior1 = 0; 
+        var maior2 = 0; 
+        var maior3 = 0; 
+        var maior4 = 0; 
+
+        var menor1 = 1;
+        var menor2 = 1;
+        var menor3 = 1;
+        var menor4 = 1;
+
+    for (var cont = 1; cont <= numero; cont++) {
+        var aleatorio = Math.random();
+
+        if (aleatorio >= 0.75)  {
+            texto += `${aleatorio} está no 1º quartil <br> `;
+
+            sorteados1++; 
+
+            if (aleatorio < menor1) {
+                menor1 = aleatorio;
+            }
+            if (aleatorio > maior1) {
+                maior1 = aleatorio;
+            }
+
+
+        } else if (aleatorio >= 0.5 && aleatorio < 0.75) {
+            texto += `${aleatorio} está no 2º quartil <br> `;
+
+            sorteados2++; 
+
+            if (aleatorio < menor2) {
+                menor2 = aleatorio;
+            }
+            if (aleatorio > maior2) {
+                maior2 = aleatorio;
+            }
+            
+
+        } else if (aleatorio >= 0.25 && aleatorio < 0.5) {
+            texto += `${aleatorio} está no 3º quartil <br> `;
+
+            sorteados3++; 
+
+            if (aleatorio < menor3) {
+                menor3 = aleatorio;
+            }
+            if (aleatorio > maior3) {
+                maior3 = aleatorio;
+            }
+
+        } else if (aleatorio < 0.25) {
+            texto += `${aleatorio} está no 4º quartil <br> `;
+
+            sorteados4++; 
+
+            if (aleatorio < menor4) {
+                menor4 = aleatorio;
+            }
+            if (aleatorio > maior4) {
+                maior4 = aleatorio;
+            }
+           
+        }
+        
+    }
+    if (menor1 == 1) {
+            menor1 = 0;
+        }
+
+    if (menor2 == 1) {
+            menor2 = 0;
+        }
+
+    if (menor3 == 1) {
+            menor3 = 0;
+        }
+
+    if (menor4 == 1) {
+            menor4 = 0;
+        }
+    div_mensagem.innerHTML = `${texto}
+    
+   <br> <br> 1º QUARTIL  <br> <br>
+
+    TOTAL DE NÚMEROS SORTEADOS = ${sorteados1} <br> <br>
+
+    MAIOR NÚMERO SORTEADO = ${maior1}  <br> <br>
+
+    MENOR NÚMERO SORTEADO = ${menor1} <br> <br>
+    
+    2º QUARTIL  <br> <br>
+
+    TOTAL DE NÚMEROS SORTEADOS = ${sorteados2} <br> <br>
+
+    MAIOR NÚMERO SORTEADO = ${maior2}  <br> <br>
+
+    MENOR NÚMERO SORTEADO = ${menor2} <br> <br>
+    
+    3º QUARTIL  <br> <br>
+
+    TOTAL DE NÚMEROS SORTEADOS = ${sorteados3} <br> <br>
+
+    MAIOR NÚMERO SORTEADO = ${maior3}  <br> <br>
+
+    MENOR NÚMERO SORTEADO = ${menor3} <br> <br>
+    
+    
+    4º QUARTIL  <br> <br>
+
+    TOTAL DE NÚMEROS SORTEADOS = ${sorteados4} <br> <br>
+
+    MAIOR NÚMERO SORTEADO = ${maior4}  <br> <br>
+
+    MENOR NÚMERO SORTEADO = ${menor4} <br> <br>`;
+
+    }
+</script>

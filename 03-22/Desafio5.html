@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 5</title>
+</head>
+<body>
+
+    <h1>Desafio 5 </h1>
+    
+    Informe a temperatura atual: <br>
+    <input id="input_temperatura"> <br><br>
+
+    <button onclick="calcular()">Analisar clima</button>
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+        var temperatura = Number (input_temperatura.value);
+
+        if (temperatura < 21 || temperatura > 24) {
+            alert("Alerta de desconforto!");
+        }
+
+        if (temperatura < 21) {
+            alert ("As pessoas vão ter hipotermia");
+        }
+         
+        if (temperatura > 24) {
+            alert ("As pessoas vão derreter");
+        }
+    }
+</script>

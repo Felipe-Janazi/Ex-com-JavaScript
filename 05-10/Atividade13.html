@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 13</title>
+</head>
+
+<body>
+
+
+    <h1>Atividade 13</h1>
+
+    <select id="select_resultado">
+        <option value="#">Indique o resultado:</option>
+        <option value="vitoria">Vitória</option>
+        <option value="empate">Empate</option>
+        <option value="derrota">Derrota</option>
+    </select>
+
+    <button onclick="registrar()">Registrar jogo</button> <br>
+
+    Indique qual jogo deseja saber o resultado: <input id="input_desejado" oninput="pesquisa()"> <br>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+
+    var lista_jogos = [];
+    var pontos = 0;
+
+    var vitoria = 0;
+    var empate = 0;
+    var derrota = 0;
+    var jogos = 0;
+    function registrar() {
+
+        div_mensagem.innerHTML = '';
+
+        var resultado = select_resultado.value;
+
+
+        if (resultado == '#') {
+            alert('Digite um valor correto')
+        } else if (resultado == 'vitoria') {
+            pontos += 3
+            vitoria++;
+            jogos++;
+            lista_jogos.push('Vitória')
+        } else if (resultado == 'empate') {
+            pontos++;
+            empate++;
+            jogos++;
+            lista_jogos.push('Empate')
+        } else {
+            lista_jogos.push('Derrota');
+            derrota++
+            jogos++;
+        }
+
+        var maxPonto = jogos * 3;
+        var aproveitamento = pontos / maxPonto * 100
+        div_mensagem.innerHTML += `  O time teve: ${vitoria} vitórias, ${empate} empates, ${derrota} derrotas  
+
+        Pontuação total: ${pontos} pontos  
+
+        Aproveitamento: ${aproveitamento}%  <br>`
+    }
+
+
+    function pesquisa() {
+
+        var desejado = Number(input_desejado.value);
+
+        if (lista_jogos[desejado - 1] == 'Vitória') {
+            div_mensagem.innerHTML += `No ${desejado}º jogo, o time ganhou `;
+        } else if (lista_jogos[desejado - 1] == 'Empate') {
+            div_mensagem.innerHTML += `No ${desejado}º jogo, o time empatou `;
+        } else if (lista_jogos[desejado - 1] == 'Derrota') {
+            div_mensagem.innerHTML += `No ${desejado}º jogo, o time perdeu `;
+        } else {
+            div_mensagem.innerHTML += `  Não foi cadastrado um ${desejado}º jogo `;
+        }
+    }
+</script>

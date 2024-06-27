@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sete e meio</title>
+</head>
+
+<body>
+
+    <h1>Sete e meio</h1>
+
+    <div id="jogar">
+        <button onclick="jogar()">Jogar sete e meio</button>
+    </div>
+
+
+
+    <div style="display: none;" id="jogando">
+        <button onclick="pedir()">Pedir outra carta</button>
+        <button onclick="passar()">Passar a vez</button>
+
+        <div id="div_mensagem"></div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    let lista_ouros = ['Ás de ouros', '2 de ouros', '3 de ouros', '4 de ouros', '5 de ouros', '6 de ouros', '7 de ouros', 'Valete de ouros', 'Rainha de ouros', 'Rei de ouros']
+
+    let lista_copas = ['Ás de copas', '2 de copas', '3 de copas', '4 de copas', '5 de copas', '6 de copas', '7 de copas', 'Valete de copas', 'Rainha de copas', 'Rei de copas']
+
+    let lista_espadas = ['Ás de espadas', '2 de espadas', '3 de espadas', '4 de espadas', '5 de espadas', '6 de espadas', '7 de espadas', 'Valete de espadas', 'Rainha de espadas', 'Rei de espadas']
+
+    let lista_paus = ['Ás de paus', '2 de paus', '3 de paus', '4 de paus', '5 de paus', '6 de paus', '7 de paus', 'Valete de paus', 'Rainha de paus', 'Rei de paus']
+
+    let cartas_sorteadas = [];
+
+    let pontos = 0;
+
+    let numero_escolhido = 0;
+
+    function jogar() {
+
+        let escolha_numero = 0;
+        let escolha_nipe = (Math.random() * 3 + 1).toFixed(0);
+
+        if (escolha_nipe == 1) {
+
+            escolha_numero = (Math.random() * 9).toFixed(0);
+
+            cartas_sorteadas.push(lista_ouros[escolha_numero]);
+
+
+        } else if (escolha_nipe == 2) {
+
+            escolha_numero = (Math.random() * 9).toFixed(0);
+
+            cartas_sorteadas.push(lista_copas[escolha_numero]);
+
+        } else if (escolha_nipe == 3) {
+
+            escolha_numero = (Math.random() * 9).toFixed(0);
+
+            cartas_sorteadas.push(lista_espadas[escolha_numero]);
+
+
+        } else if (escolha_nipe == 4) {
+
+            escolha_numero = (Math.random() * 9).toFixed(0);
+
+            cartas_sorteadas.push(lista_paus[escolha_numero]);
+
+        }
+
+        document.getElementById('jogar').style.display = 'none';
+        document.getElementById('jogando').style.display = 'block';
+
+        if (escolha_numero == 0) {
+
+            pontos += 1;
+
+        } else if (escolha_numero == 1) {
+
+            pontos += 2;
+
+        }
+        else if (escolha_numero == 2) {
+
+            pontos += 3;
+        }
+        else if (escolha_numero == 3) {
+
+            pontos += 4;
+        }
+        else if (escolha_numero == 4) {
+
+            pontos += 5;
+        }
+        else if (escolha_numero == 5) {
+
+            pontos += 6;
+        }
+        else if (escolha_numero == 6) {
+
+
+            pontos += 7;
+        }
+        else if (escolha_numero == 7) {
+
+            pontos += 0.5;
+        }
+        else if (escolha_numero == 8) {
+
+            pontos += 0.5;
+
+        }
+        else if (escolha_numero == 9) {
+
+            pontos += 0.5;
+
+        }
+
+
+        div_mensagem.innerHTML = `Jogador: <br><br>
+        (${pontos} pontos) - ${cartas_sorteadas[0]}`;
+
+
+    }
+
+    function pedir() {
+        let escolha_nipe = (Math.random() * 3 + 1).toFixed(0);
+
+        if (escolha_nipe == 1) {
+            numero_escolhido = (Math.random() * 9).toFixed(0);
+
+            if (cartas_sorteadas.indexOf(lista_ouros[numero_escolhido]) >= 0) {
+
+                pedir();
+
+            } else {
+
+                cartas_sorteadas.push(lista_ouros[numero_escolhido]);
+
+                passou();
+
+            }
+        } else if (escolha_nipe == 2) {
+            numero_escolhido = (Math.random() * 9).toFixed(0);
+
+            if (cartas_sorteadas.indexOf(lista_copas[numero_escolhido]) >= 0) {
+
+                pedir();
+
+            } else {
+
+                cartas_sorteadas.push(lista_copas[numero_escolhido]);
+
+                passou();
+            }
+        } else if (escolha_nipe == 3) {
+            numero_escolhido = (Math.random() * 9).toFixed(0);
+
+            if (cartas_sorteadas.indexOf(lista_espadas[numero_escolhido]) >= 0) {
+
+                pedir();
+
+            } else {
+
+                cartas_sorteadas.push(lista_espadas[numero_escolhido]);
+
+                passou();
+            }
+        } else if (escolha_nipe == 4) {
+            numero_escolhido = (Math.random() * 9).toFixed(0);
+
+            if (cartas_sorteadas.indexOf(lista_paus[numero_escolhido]) >= 0) {
+
+                pedir();
+
+            } else {
+
+                cartas_sorteadas.push(lista_paus[numero_escolhido]);
+
+                passou();
+            }
+        }
+    }
+
+    let index_pontos = 0;
+
+
+    function passou() {
+        if (numero_escolhido == 0) {
+            pontos += 1;
+        } else if (numero_escolhido == 1) {
+            pontos += 2;
+        } else if (numero_escolhido == 2) {
+            pontos += 3;
+        } else if (numero_escolhido == 3) {
+            pontos += 4;
+        } else if (numero_escolhido == 4) {
+            pontos += 5;
+        } else if (numero_escolhido == 5) {
+            pontos += 6;
+        } else if (numero_escolhido == 6) {
+            pontos += 7;
+        } else if (numero_escolhido == 7) {
+            pontos += 0.5;
+        } else if (numero_escolhido == 8) {
+            pontos += 0.5;
+        } else if (numero_escolhido == 9) {
+            pontos += 0.5;
+        }
+
+        index_pontos++;
+
+        if (pontos == 7.5) {
+
+            div_mensagem.innerHTML += `<br> Quero mais uma carta! <br>
+            (${pontos} pontos) - ${cartas_sorteadas[index_pontos]} <br> <br>
+            SETE E MEIO! 
+            
+            <br> <br>
+            
+            O jogador venceu com 7.5 pontos!`;
+        } else if (pontos > 7.5) {
+            div_mensagem.innerHTML += `<br> Quero mais uma carta! <br>
+            (${pontos} pontos) - ${cartas_sorteadas[index_pontos]} <br> <br>
+            O JOGADOR ESTOUROU! 
+            
+            <br> <br>
+            
+            A banca venceu com 0 pontos`;
+        } else if (pontos < 7.5) {
+            div_mensagem.innerHTML += `<br> Quero mais uma carta! <br>
+            (${pontos} pontos) - ${cartas_sorteadas[index_pontos]}`;
+        }
+
+    }
+
+    let pontos_banca = 0;
+    let numero_banca = 0;
+
+    function passar() {
+        let escolha_nipe = (Math.random() * 3 + 1).toFixed(0);
+
+        if (escolha_nipe == 1) {
+            numero_banca = (Math.random() * 9).toFixed(0);
+
+            if (cartas_sorteadas.indexOf(lista_ouros[numero_banca]) >= 0) {
+
+                passar();
+
+            } else {
+
+                cartas_sorteadas.push(lista_ouros[numero_banca]);
+
+                passou_banca();
+
+            }
+        } else if (escolha_nipe == 2) {
+            numero_banca = (Math.random() * 9).toFixed(0);
+
+            if (cartas_sorteadas.indexOf(lista_copas[numero_banca]) >= 0) {
+
+                passar();
+
+            } else {
+
+                cartas_sorteadas.push(lista_copas[numero_banca]);
+
+                passou_banca();
+            }
+        } else if (escolha_nipe == 3) {
+            numero_banca = (Math.random() * 9).toFixed(0);
+
+            if (cartas_sorteadas.indexOf(lista_espadas[numero_banca]) >= 0) {
+
+                passar();
+
+            } else {
+
+                cartas_sorteadas.push(lista_espadas[numero_banca]);
+
+                passou_banca();
+            }
+        } else if (escolha_nipe == 4) {
+            numero_banca = (Math.random() * 9).toFixed(0);
+
+            if (cartas_sorteadas.indexOf(lista_paus[numero_banca]) >= 0) {
+
+                passar();
+
+            } else {
+
+                cartas_sorteadas.push(lista_paus[numero_banca]);
+
+                passou_banca();
+            }
+        }
+    }
+
+    function passou_banca() {
+
+            if(pontos_banca == 0) {
+                div_mensagem.innerHTML += `<br><br> Banca: <br> <br>`
+            }
+
+        if (numero_banca == 0) {
+            pontos_banca += 1;
+        } else if (numero_banca == 1) {
+            pontos_banca += 2;
+        } else if (numero_banca == 2) {
+            pontos_banca += 3;
+        } else if (numero_banca == 3) {
+            pontos_banca += 4;
+        } else if (numero_banca == 4) {
+            pontos_banca += 5;
+        } else if (numero_banca == 5) {
+            pontos_banca += 6;
+        } else if (numero_banca == 6) {
+            pontos_banca += 7;
+        } else if (numero_banca == 7) {
+            pontos_banca += 0.5;
+        } else if (numero_banca == 8) {
+            pontos_banca += 0.5;
+        } else if (numero_banca == 9) {
+            pontos_banca += 0.5;
+        }
+
+
+        index_pontos++;
+
+        if (pontos_banca == 7.5) {
+            div_mensagem.innerHTML += `(${pontos_banca} pontos) - ${cartas_sorteadas[index_pontos]} <br>
+            SETE E MEIO! <br> <br>
+            A banca venceu com ${pontos_banca} pontos`;
+        } else if (pontos_banca <= pontos) {
+           div_mensagem.innerHTML += `(${pontos_banca} pontos) - ${cartas_sorteadas[index_pontos]} <br>`;
+             passar();
+        } else if (pontos_banca > 7.5) {
+            div_mensagem.innerHTML += `(${pontos_banca} pontos) - ${cartas_sorteadas[index_pontos]} <br>
+            BANCA ESTOUROU! <br> <br>
+            
+            O jogador venceu com ${pontos} pontos`;
+        }else if (pontos_banca > pontos) {
+            div_mensagem.innerHTML += `(${pontos_banca} pontos) - ${cartas_sorteadas[index_pontos]} <br>
+            A banca venceu com ${pontos_banca} pontos`;
+        }
+
+
+    }
+</script>

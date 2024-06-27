@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+
+<body>
+
+    <h1>Atividade 2</h1>
+
+    Destino de viagem: <input type="text" id="input_destino"> <br><br>
+
+    <button onclick="adicionar()">Adicionar</button> <br><br>
+    <button onclick="primeira()"> Primeira viagem</button> <br><br>
+    <button onclick="terceira()"> Terceira viagem</button> <br><br>
+    <button onclick="ultima()"> Última viagem</button> <br><br>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var lista_viagem = [];
+
+    function adicionar() {
+
+        var destino = input_destino.value;
+
+        lista_viagem.push(destino);
+
+    }
+
+    function primeira() {
+
+    
+
+        if (lista_viagem[0] != undefined) {
+            div_mensagem.innerHTML += `Primeira viagem: ${lista_viagem[0]} <br>`;
+        } else {
+            div_mensagem.innerHTML += `Nenhuma viagem<br>`;
+        }
+    }
+
+    function terceira() {
+
+        if (lista_viagem[2] != undefined) {
+            div_mensagem.innerHTML += `Terceira viagem: ${lista_viagem[2]} <br>`;
+        } else {
+            div_mensagem.innerHTML += `Terceira viagem: Não tem destino <br>`;
+        }
+
+    }
+
+    function ultima() {
+
+        var tamanho_lista = lista_viagem.length;
+
+        if (lista_viagem[tamanho_lista-1]  != undefined) {
+            div_mensagem.innerHTML += `Última viagem: ${lista_viagem[tamanho_lista-1]} <br>`;
+        } else {
+            div_mensagem.innerHTML += `Última viagem: Não tem destino <br>`;
+        }
+
+    }
+</script>

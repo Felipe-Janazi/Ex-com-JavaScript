@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 7</title>
+</head>
+
+<body>
+
+    <h1>Atividade 7</h1>
+    
+    Informe seu login: <br>
+    <input id="input_login"> <br><br>
+
+    Informe sua senha: <br>
+    <input id="input_senha"> <br><br>
+
+    <button onclick="calcular()">Entrar</button> <br><br>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+        var login = input_login.value;
+        var senha = input_senha.value;
+
+        if (login == 'SPTech' && senha == 'digital') {
+            alert("Usuário autenticado com sucesso")
+        } else {
+            alert("Falha na autenticação")
+        }
+    }
+</script>

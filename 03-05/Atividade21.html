@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 21</title>
+</head>
+<body>
+
+    <h1>Atividade 21</h1>
+    
+    Informe a quantidade de homens no elevador:
+    <input id="input_homem"> <br><br>
+
+    Informe a quantidade de mulheres no elevador: 
+    <input id="input_mulher"> <br><br>
+
+    <button onclick="calcular()">Ligar elevador</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script> 
+
+function calcular() {
+ 
+    var homem = Number (input_homem.value);
+    var mulher = Number (input_mulher.value); 
+
+    var Phomem = homem * 90; 
+    var Pmulher = mulher * 70;
+    var total = Phomem + Pmulher; 
+
+    if (total  >  500) {
+
+        var calculo = total - 500; 
+
+        div_mensagem.innerHTML = ` <br> <span style = "color: red">Alguém precisa descer. Precisa perder ${calculo}kg para mover o elevador </span> `;
+    } else {
+
+        div_mensagem.innerHTML = ` <br> <span style = "color: green"> Elevador vai se mover, pois está com ${total}kg </span> `; 
+    }
+}</script>

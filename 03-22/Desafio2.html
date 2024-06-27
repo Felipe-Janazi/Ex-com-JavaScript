@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2</title>
+</head>
+<body>
+
+    <h1>Desafio 2</h1>
+
+    Informe sua nota do ENEM: <br>
+    <input id="input_enem"> <br><br>
+
+    Informe sua nota do vestibular: <br>
+    <input id="input_vestibular"> <br><br>
+
+    <button onclick="calcular()">Avaliação</button>
+    
+</body>
+</html>
+
+<script> 
+
+function calcular() {
+    var enem = Number (input_enem.value);
+    var vestibular = Number (input_vestibular.value);
+
+    if ( enem >= 800 || vestibular >= 700) {
+        alert("Parabens, aprovado!")
+    } else {
+        alert ("Tente semestre que vem!")
+    }
+}
+</script>

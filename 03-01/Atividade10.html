@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 10</title>
+</head>
+
+<body>
+
+    <h1> Atividade 10</h1>
+
+    Qual seu saldo no Banco?
+    <input id="ipt_saldo"> <br><br>
+
+    <button onclick="calcular()">
+        Verificar finanças
+    </button> <br> <br>
+    
+    <div id="div_mensagem"> </div>
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+
+        var saldo = Number(ipt_saldo.value);
+
+        if (saldo == 0 ) {
+
+            div_mensagem.innerHTML += `<br> <span style = "color: black"> Conta zerada </span> `;
+        }
+
+        if (saldo < 0 ) {
+
+            div_mensagem.innerHTML += `<br> <span style = "color: red"> Está devendo! </span> `;
+
+        }
+
+        if (saldo > 0) {
+
+            div_mensagem.innerHTML += `<br> <span style = "color: blue"> Saldo positivo! sorriso</span>`;
+
+        }
+
+    }
+
+</script>

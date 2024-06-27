@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 9</title>
+</head>
+<body>
+    
+    <h1> Atividade 9 </h1>
+
+    Informe a última série (SITCOM) que assistiu: 
+    <input id="ipt_serie">  <br> <br>
+
+    Informe a quantidade de episódios desta série: 
+    <input id="ipt_episodios">  <br> <br>
+
+    <button onclick="calcular()">  
+        Verificar nivel 
+    </button><br> <br>
+
+    <div id="div_mensagem"> 
+
+    </div>
+
+</body>
+</html>
+
+<script> 
+
+    function calcular() {
+        var episodios = Number (ipt_episodios.value);
+
+        var horas = episodios * 22 / 60; 
+
+        div_mensagem.innerHTML += `<br>Vejo que você gosta da série ${ipt_serie.value}`;
+
+
+        if (horas> 30 ) {
+
+            div_mensagem.innerHTML += `<br> Uau, você realmente gosta dessa série!`;
+        }
+    }
+</script>

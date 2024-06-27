@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula</title>
+</head>
+<body>
+
+    Fruta: <input type="text" id="input_fruta"> <br><br>
+
+    <button onclick="adicionar()">Adicionar</button> <br><br>
+
+    <button onclick="pesquisar()">Pesquisar</button> <br><br>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+
+</html>
+
+<script>
+    var lista_frutas = [];
+
+    function pesquisar() {
+        var fruta  = input_fruta.value;
+
+        if (lista_frutas.indexOf(fruta) >= 0) {
+            alert ("Já existe esta fruta")
+        } else {
+            alert("Está fruta ainda não existe")
+        }
+
+    }
+
+    function adicionar() {
+
+        var fruta = input_fruta.value;
+
+        if (lista_frutas.indexOf(fruta) >= 0) {
+
+            alert ("Não pode cadastrar uma fruta repetida")
+        } else {
+
+            lista_frutas.push( fruta);
+        }
+
+        div_mensagem.innerHTML = lista_frutas;
+    }
+</script>

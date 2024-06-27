@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+
+<body>
+
+    <h1>Atividade 2</h1>
+
+    Informe sua renda: <br>
+    <input id="input_renda"> <br><br>
+
+    Informe sua renda familiar: <br>
+    <input id="input_rendaFamilia"> <br><br>
+
+    <button onclick="calcular()">Verificar ajuda</button> <br><br>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+        var renda = Number(input_renda.value);
+        var rendaFamilia = Number(input_rendaFamilia.value);
+
+        if (renda <= 1050 && rendaFamilia <= 2100) {
+
+            alert("Você terá direito")
+        } else {
+            alert("Você Não tem direito")
+        }
+
+
+    }
+</script>

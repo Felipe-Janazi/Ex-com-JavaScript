@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+</head>
+<body>
+
+    <h1> Atividade 5 </h1>
+
+    Quantos KWh foram consumidos?
+    <input id="input_KWh"> <br> <br>
+
+    <button onclick="conta()">Contador de luz</button>
+    
+</body>
+</html>
+
+<script> 
+
+function conta() {
+
+    var kwh = Number (input_KWh.value); 
+    var valor = kwh * 0.85;
+    var descontoCalculo = valor * 0.1; 
+
+    if (kwh < 100) {
+
+        var desconto = valor - descontoCalculo;
+
+        alert ("Sua conta é de R$" + desconto);
+
+    }
+
+    if (kwh >= 100) {
+
+alert ("Sua conta é de R$" + valor);
+
+    }
+
+
+}
+
+</script>

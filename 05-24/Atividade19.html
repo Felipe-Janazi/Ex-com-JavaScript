@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 19</title>
+</head>
+<body>
+    
+    <h1>Atividade 19</h1>
+
+    Informe o nome de cada filme que você viu na vida: <input type="text" id="input_filme">
+    <button onclick="cadastrar()">Cadastrar</button> <br><br>
+
+    
+    <button onclick="listar()">Listar Filmes</button> <br> <br>
+
+    De: <input type="text" id="input_de"> <br>
+    Ate: <input type="text" id="input_ate"> <br>
+    <button onclick="filtrar()">Filtrar Filmes</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    var lista_filme = [];
+
+    function cadastrar() {
+        div_mensagem.innerHTML = '';
+
+        var filme = input_filme.value;
+
+        lista_filme.push(filme);
+
+        var tamanho_lista = lista_filme.length;
+
+        div_mensagem.innerHTML = `Você já assistiu ${tamanho_lista} filmes`;
+
+    }
+
+    function listar() {
+        div_mensagem.innerHTML = '';
+
+        var tamanho_filme = lista_filme.length - 1;
+
+        for (var cont = tamanho_filme; cont >= 0; cont--) {
+
+            div_mensagem.innerHTML += `${lista_filme[cont]} <br>`;
+        }
+    }
+
+    function filtrar() {
+        div_mensagem.innerHTML = '';
+        
+        var de = input_de.value - 1;
+        var ate = input_ate.value -1;
+
+        for (var cont = ate; cont >= de; cont--) {
+
+            div_mensagem.innerHTML += `${lista_filme[cont]}<br>`;
+        } 
+    }
+</script>

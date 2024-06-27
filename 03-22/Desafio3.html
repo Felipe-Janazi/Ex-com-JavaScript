@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 3</title>
+</head>
+<body>
+
+    <h1>Desafio 3</h1>
+
+    Informe sua renda individual: <br>
+    <input id="input_renda_ind"> <br><br>
+
+    Informe sua renda familiar: <br>
+    <input id="input_renda_fam"> <br><br>
+
+    <button onclick="calcular()">Terei o beneficio</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script> 
+
+ function calcular() {
+    var ind = Number (input_renda_ind.value);
+    var fam = Number (input_renda_fam.value);
+
+    if (ind <= 2000 || fam <= 3000) {
+        div_mensagem.innerHTML = "Tera direito ao auxilio"
+    } else {
+        div_mensagem.innerHTML = "Nao tera direito ao auxilio"
+    }
+
+ }
+</script>

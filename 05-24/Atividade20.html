@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX 20</title>
+</head>
+
+<body>
+
+    Digite o nome do produto: <input type="text" id="input_nome"> <br>
+    Digite o preco do produto: <input type="text" id="input_preco"> <br>
+    <button onclick="cadastrar()">Cadastrar</button> <br><br>
+
+    <button onclick="atualizar()">Atualizar Estoque</button> <br><br>
+
+    <select id="select_preco">
+        <option value="1">Preços acima de:</option>
+        <option value="2">Preços abaixo de:</option>
+    </select>
+
+    <input type="text" id="input_select"> <br>
+    <button onclick="filtrar()">Filtrar produtos</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var lista_nome = [];
+    var lista_preco = [];
+
+    function cadastrar() {
+
+        var nome = input_nome.value;
+        var preco = Number(input_preco.value);
+
+        var tamanho_nome = nome.length;
+
+        if (tamanho_nome < 3 || preco <= 0) {
+            div_mensagem.innerHTML = `O nome precisa conter ao menos 3 letras e o preco precisa ser positivo`;
+        } else {
+            lista_nome.push(nome);
+            lista_preco.push(preco);
+
+            div_mensagem.innerHTML = `Cadastro concluído!`;
+        }
+    }
+
+    function atualizar() {
+        div_mensagem.innerHTML = '';
+
+        var tamanho_nome = lista_nome.length;
+
+        div_mensagem.innerHTML += `Você tem ${tamanho_nome} produtos cadastrados em estoque:<br> <br>`
+
+        var valorTotal = 0;
+
+        for (var cont = 0; cont <= tamanho_nome - 1; cont++) {
+
+            valorTotal += Number(lista_preco[cont]);
+
+            div_mensagem.innerHTML += `${cont + 1}. ${lista_nome[cont]} - R$${lista_preco[cont]}<br> <br>`
+        }
+
+        div_mensagem.innerHTML += `Seu estoque vale R$${valorTotal}`;
+    }
+
+    function filtrar() {
+        div_mensagem.innerHTML = '';
+
+        var selectPreco = select_preco.value;
+        var valor = Number (input_select.value);
+        var tamanho_nome = lista_nome.length;
+
+        var numerador = 0;
+
+        for (var cont = 0; cont <= tamanho_nome; cont++) {
+
+            var precoProduto = lista_preco[cont]
+
+            if (precoProduto > valor && selectPreco == "1") {
+
+                numerador++
+
+                div_mensagem.innerHTML += `${numerador}. ${lista_nome[cont]} - R$${lista_preco[cont]}<br> <br>`
+            } else if (precoProduto < valor && selectPreco == "2") {
+                numerador++
+
+                div_mensagem.innerHTML += `${numerador}. ${lista_nome[cont]} - R$${lista_preco[cont]}<br> <br>`
+            }
+        }
+    }
+</script>

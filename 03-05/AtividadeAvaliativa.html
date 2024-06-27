@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Avaliativa</title>
+</head>
+<body>
+
+    <h1>Atividade Avaliativa</h1>
+
+    Informe seu  salário: <br>
+    <input id="input_salario">  <br><br>
+    
+    Informe seu adicional mensal: <br>
+    <input id="input_adicional"> <br><br>
+
+    Informe seu bônus: <br>
+    <input id="input_bonus"> <br><br>
+
+    <button onclick="calcular()">Analisar minha renda</button> <br><br>
+
+    <div id="div_mensagem"> </div>
+    
+</body>
+</html>
+
+<script>
+    function calcular() {
+
+        var salario = Number (input_salario.value);
+        var adicional = Number (input_adicional.value);
+        var bonus = Number (input_bonus.value); 
+
+        var bruto = salario + adicional + bonus; 
+        var ir = 0;
+
+        if (bruto >= 10000) {
+
+            ir = bruto * 0.125; 
+        }
+
+
+        var bruto_ir = bruto - ir; 
+        var inss =  (bruto_ir * 0.1); 
+
+        var fgts = bruto_ir * 0.08;
+        
+        var liquido = bruto - ir - inss - fgts; 
+
+        var poupar = liquido * 0.15; 
+
+        var poupar_ano  = poupar * 12; 
+
+
+        if (liquido > 2500) {
+            div_mensagem.innerHTML = `<h2> ANÁLISE DA SUA RENDA  </h2> 
+
+            Com o salário de <b>R$${salario}</b>, com adicional de <b>R$${adicional}</b> e bônus de <b>R$${bonus}</b>, você tem: <br>
+
+            Bruto: <b>R$${bruto}</b>  <br>
+
+            IR: <b>R$${ir}</b>  <br> 
+
+            INSS: <b>R$${inss}</b>  <br> 
+
+            FGTS: <b>R$${fgts}</b> <br> 
+
+            Líquido: <b>R$${liquido}</b> <br> 
+            
+            Com a renda de <b>R$${liquido}</b>, é recomendado poupar <b>R$${poupar}</b>, para que em um ano tenha poupado <b>R$${poupar_ano}</b>`; 
+        } else { 
+
+            div_mensagem.innerHTML = `<h2> ANÁLISE DA SUA RENDA  </h2> 
+
+            Com o salário de <b>R$${salario}</b>, com adicional de <b>R$${adicional}</b> e bônus de <b>R$${bonus}</b>, você tem: <br>
+
+            Bruto: <b>R$${bruto}</b>  <br>
+
+            IR: <b>R$${ir}</b>  <br> 
+
+            INSS: <b>R$${inss}</b>  <br> 
+
+            FGTS: <b>R$${fgts}</b> <br> 
+
+            Líquido: <b>R$${liquido}</b> <br> 
+            
+            Com a renda de <b>R$${liquido}</b>, é recomendado obter renda extra para realizar uma poupança.`; 
+        }
+    }
+</script>

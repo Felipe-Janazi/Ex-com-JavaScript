@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 16</title>
+</head>
+
+<body>
+
+    <h1>Atividade 16</h1>
+
+    Informe quantas pessoas irão entrar no carro: <input id="input_pessoas"> <br>
+
+    Informe quantas pessoas o veículo suporta: <input id="input_veiculo"> <br>
+
+    <button onclick="calcular() ">#Partiu Carona</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        div_mensagem.innerHTML = '';
+
+        var pessoas = Number(input_pessoas.value);
+
+        var limite = Number (input_veiculo.value);
+
+        for (var contador = 1; contador <= pessoas; contador++) {
+
+            if (contador <= 1) {
+                div_mensagem.innerHTML += `Entrou o 1º passageiro (que é o(a) motorista)  <br>`;
+            } else if (contador > 1 && contador <= limite) {
+                div_mensagem.innerHTML += `Entrou o ${contador}º passageiro  <br> `;
+            } else {
+                div_mensagem.innerHTML += `O ${contador}º passageiro terá que esperar! <br>  `;
+            }
+        }
+    }
+</script>

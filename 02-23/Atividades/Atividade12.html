@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12</title>
+</head>
+<body>
+    
+    <h1> Atividade 12</h1>
+    
+    Sabor da pizza:
+    <input id="input_sabor"><br> <br>
+
+    Valor da pizza:
+    <input type="number" id="input_valor"> <br> <br>
+
+    Quantos amigos irão comer?
+    <input type="number" id="input_qtd"><br> <br>
+
+    <button onclick="calculo()">
+        Ver valor por amigo
+    </button>  
+
+    <div id="div_pizza">
+    </div>
+</body>
+</html>
+
+<script>
+
+    function calculo() {
+        var sabor = input_sabor.value;
+        var valor = Number (input_valor.value); 
+        var amigos = Number (input_qtd.value);
+        
+        var caixinha = valor * 0.1; 
+        var total = valor + caixinha;
+        var Vamigos = total / amigos; 
+        
+        
+        div_pizza.innerHTML += `<br> Cada amigo vai colaborar com R$${Vamigos} para a pizza de ${sabor}<br>`;
+    }
+    </script>

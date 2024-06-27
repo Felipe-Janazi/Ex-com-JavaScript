@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 14</title>
+</head>
+
+<body>
+    <h1> Atividade 14</h1>
+
+    Nome do passageiro:
+    <input id="ipt_nome" placeholder="Nome do passageiro"> <br><br>
+
+    Distância em km:
+    <input id="ipt_distancia" placeholder="Distancia em KM"> <br> <br>
+
+    Bandeira da corrida:
+    <input type="number" id="ipt_bandeira" placeholder="Digite 1, 2 ou 3"><br><br>
+
+    Horário da corrida:
+    <input id="ipt_horario" placeholder="Somente horarios inteiros"> <br><br>
+
+    <button onclick="calculo()"> Calcular corrida </button> <br><br>
+
+    <div id="div_mensagem"> </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function calculo() {
+        var distancia = Number(ipt_distancia.value);
+        var bandeira = Number(ipt_bandeira.value);
+        var horario = Number(ipt_horario.value);
+
+        var distanciaValor = distancia * 1.25;
+
+        if (bandeira == 1) {
+
+            if (horario <= 6) {
+                var DV6 = distanciaValor * 0.05 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 7) {
+                var DV6 = distanciaValor * 0.1 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 8) {
+                var DV6 = distanciaValor * 0.1 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 9) {
+                var DV6 = distanciaValor * 0.1 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 10) {
+                var DV6 = distanciaValor * 0.1 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 11) {
+                var DV6 = distanciaValor * 0.1 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario > 12) {
+                var DV6 = distanciaValor * 0.1 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+
+
+
+
+        }
+
+        if (bandeira == 2) {
+
+            if (horario == 0) {
+                var DV6 = distanciaValor * 0.1 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 1) {
+                var DV6 = distanciaValor * 0.1 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 2) {
+                var DV6 = distanciaValor * 0.1 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 3) {
+                var DV6 = distanciaValor * 0.1 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 4) {
+                var DV6 = distanciaValor * 0.1 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 5) {
+                var DV6 = distanciaValor * 0.1 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 6) {
+                var DV6 = distanciaValor * 0.1 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 7) {
+                var DV6 = distanciaValor * 0.2 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 8) {
+                var DV6 = distanciaValor * 0.2 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 9) {
+                var DV6 = distanciaValor * 0.2 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 10) {
+                var DV6 = distanciaValor * 0.2 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 11) {
+                var DV6 = distanciaValor * 0.2 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 12) {
+                var DV6 = distanciaValor * 0.2 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 13) {
+                var DV6 = distanciaValor * 0.3 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 14) {
+                var DV6 = distanciaValor * 0.3 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 15) {
+                var DV6 = distanciaValor * 0.3 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 16) {
+                var DV6 = distanciaValor * 0.3 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 17) {
+                var DV6 = distanciaValor * 0.3 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 18) {
+                var DV6 = distanciaValor * 0.3 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 19) {
+                var DV6 = distanciaValor * 0.3 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 20) {
+                var DV6 = distanciaValor * 0.3 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 21) {
+                var DV6 = distanciaValor * 0.3 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 22) {
+                var DV6 = distanciaValor * 0.3 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+            if (horario == 23) {
+                var DV6 = distanciaValor * 0.3 + distanciaValor;
+                div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+            }
+
+
+
+
+        }
+
+
+
+        if (bandeira == 3) {
+
+if (horario == 0) {
+    var DV6 = distanciaValor * 0.15 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 1) {
+    var DV6 = distanciaValor * 0.15 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 2) {
+    var DV6 = distanciaValor * 0.15 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 3) {
+    var DV6 = distanciaValor * 0.15 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 4) {
+    var DV6 = distanciaValor * 0.15 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 5) {
+    var DV6 = distanciaValor * 0.15 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 6) {
+    var DV6 = distanciaValor * 0.15 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 7) {
+    var DV6 = distanciaValor * 0.3 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 8) {
+    var DV6 = distanciaValor * 0.3 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 9) {
+    var DV6 = distanciaValor * 0.3 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 10) {
+    var DV6 = distanciaValor * 0.3 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 11) {
+    var DV6 = distanciaValor * 0.3 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 12) {
+    var DV6 = distanciaValor * 0.3 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 13) {
+    var DV6 = distanciaValor * 0.45 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 14) {
+    var DV6 = distanciaValor * 0.45 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 15) {
+    var DV6 = distanciaValor * 0.45 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 16) {
+    var DV6 = distanciaValor * 0.45 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 17) {
+    var DV6 = distanciaValor * 0.45 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 18) {
+    var DV6 = distanciaValor * 0.45 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 19) {
+    var DV6 = distanciaValor * 0.45 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 20) {
+    var DV6 = distanciaValor * 0.45 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 21) {
+    var DV6 = distanciaValor * 0.45 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 22) {
+    var DV6 = distanciaValor * 0.45 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+if (horario == 23) {
+    var DV6 = distanciaValor * 0.45 + distanciaValor;
+    div_mensagem.innerHTML += `<br>Olá ${ipt_nome.value} Sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia} km e o total da corrida será de ${DV6}`;
+}
+
+
+
+
+}
+
+
+
+    }
+</script>

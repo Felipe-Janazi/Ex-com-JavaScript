@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 18</title>
+</head>
+<body>
+
+    <h1>Atividade 18</h1>
+
+    Informe quantas xícaras de café você já tomou na vida: <input id="input_xicara"> <br> 
+
+    <button onclick="calcular() ">Ver a quantidade</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+    function calcular() {
+
+        var xicara = Number (input_xicara.value);
+
+        for (var contador = 1; contador  <= xicara; contador++) {
+             div_mensagem.innerHTML += ` <img src="download (1).jpg" width=80px>  <img src="download (1).jpg"width=80px>  <img src="leite.avif"width=80px> <br> <br>`;
+        }
+    }
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 7</title>
+</head>
+<body>
+
+    <h1>Atividade 7</h1>
+    
+    Informe um numero entre 20 e 100: <input id="input_numero"> <br>
+
+    <button onclick="calcular()">Adoro multiplos de 5</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+        div_mensagem.innerHTML = "";
+
+        var numero = Number (input_numero.value);
+        if (numero < 20 || numero > 100) {
+            alert("Informe um numero correto") }
+            else {
+        for (var numero2 = 1; numero2 <= numero; numero2++) {
+            var calculo = numero2 % 5;
+
+            if(calculo == 0){
+                div_mensagem.innerHTML += `${numero2} <br>`;
+            }
+        }
+    }
+    }
+</script>

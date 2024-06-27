@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 11</title>
+</head>
+<body>
+
+    <h1>Atividade 11</h1>
+    Informe a quantidade de passagens: <br>
+    <input id="input_passagem"> <br><br>
+
+    <button onclick="calcular()">Comprar</button> <br><br>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script> 
+
+function calcular() {
+    var  passagem = Number (input_passagem.value);
+    var valor = passagem * 4.40;
+
+
+    if (passagem >= 8 && passagem <= 50) {
+
+        if (passagem >= 8 && passagem <=19) {
+
+            valor = valor * 0.97;
+        } 
+
+        if (passagem >= 20 && passagem <= 49) {
+            valor = valor * 0.95;
+        }
+         if (passagem == 50) {
+            valor = valor * 0.93;
+         }
+    } else {
+        alert ("Quantidade inválida para o Fidelidade!"  )
+    }
+
+    div_mensagem.innerHTML = `Total a pagar: R$${valor}`;
+
+}
+</script>

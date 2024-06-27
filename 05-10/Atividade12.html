@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12</title>
+</head>
+<body>
+
+    <h1>Atividade 12</h1>
+
+    Informe o nome de seus filhos: <input id="input_nome"> 
+    <button onclick="cadastrar()">Cadastrar</button> <br>
+
+    <button onclick="verificar()">Atualizar família</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+var lista_nome = [];
+
+    function cadastrar() {
+        div_mensagem.innerHTML = '';
+        var nome = input_nome.value;
+
+        if (lista_nome.indexOf(nome) >= 0) {
+            alert ( "Não pode mais de 1 filho com o mesmo nome!" )
+        } else {
+            lista_nome.push(nome);
+        }
+
+    }
+
+    function verificar() {
+
+        var tamanho_lista = lista_nome.length;
+
+        var particular = tamanho_lista * 3000;
+        var publica = tamanho_lista * 1500
+
+        div_mensagem.innerHTML += `Você tem ${tamanho_lista} filhos  
+
+        Seu custo mensal será aproximadamente R$${particular} se colocá-los em escola particular ou R$${publica} se eles estudarem em escola pública `;
+    }
+</script>

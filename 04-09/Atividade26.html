@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 26</title>
+</head>
+<body>
+
+    <h1>Atividade 26</h1>
+    
+    Informe um número positivo: <input id="input_numero"> <br><br>
+
+    Informe um número para divisibilidade: <input id="input_divisao"> <br><br>
+
+    <button onclick="calcular() ">Somar numeros</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script> 
+
+function calcular() {
+    div_mensagem.innerHTML = "";
+    var numero = Number (input_numero.value);
+    var divisao = Number (input_divisao.value);
+    var soma = 0;
+    var texto = "";
+
+    if (numero > 0 ) {
+
+        if (divisao >= 1 && divisao <= numero) {
+            for (var contador = 1; contador <= numero; contador++) {
+                var calculo = contador % divisao;
+                
+                if  (calculo == 0) {
+                    soma += contador;
+                    texto += `${contador}, `;            }
+                }
+                div_mensagem.innerHTML += `Números multiplos: ${texto} <br> <br>
+                Soma dos Múltiplos: ${soma}`;
+            } else {
+                alert ("Informe um valor correto para a divisão")
+            }
+    } else {
+        alert("Informe um valor positivo")
+    }
+
+}
+</script>

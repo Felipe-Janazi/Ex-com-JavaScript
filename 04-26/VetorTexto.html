@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor Texto</title>
+</head>
+<body>
+
+    Frase: <input type="text" id="input_frase"> <br><br>
+
+    <button onclick="adicionar()">Exibir</button><br><br>
+
+    <div id="div_mensagem"></div> 
+    
+</body>
+</html>
+
+<script>
+
+    function adicionar() {
+        div_mensagem.innerHTML = '';
+        var frase = input_frase.value;
+        var tamanho_frase = frase.length;
+
+        if (tamanho_frase >= 5 ) {
+
+            for (var index = 0; index < tamanho_frase; index++){
+                
+                var letra_atual = frase[index];
+                div_mensagem.innerHTML += `${letra_atual} <br>`;
+            }
+        } else {
+            alert("Deve haver ao menos 5 letras")
+        }
+    }
+</script>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12</title>
+
+    <style>
+        .red {
+            color:red;
+        }
+
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Atividade 12</h1>
+
+    Informe qual número deseja calcular:
+    <select id="select_numero">
+        <option value="#"> Selecione um número</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select> <br>
+
+    Informe até que número será convertido: <input id="input_numero"> <br>
+
+    <button onclick="calcular()">Ver tabuada</button>
+    
+    <div id="div_mensagem">
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+        var numero = Number (input_numero.value);
+        var Snumero = select_numero.value;
+
+        if (Snumero == '#') {
+            alert("Informe um valor válido")
+        } else if (Snumero == '2') {
+            div_mensagem.innerHTML = '';
+            for (var N2 = 1; N2 <= numero; N2++) {
+                var calculo2 = N2 * 2;
+
+                div_mensagem.innerHTML += `<span class="blue"> 2 x ${N2} = ${calculo2} </span><br>`;
+            } 
+        } else if (Snumero == '3') {
+            div_mensagem.innerHTML = '';
+            for (var N3 = 1; N3 <= numero; N3++) {
+                var calculo3 = N3 * 3;
+
+                div_mensagem.innerHTML += `<span class="red">3 x ${N3} = ${calculo3}</span><br>`;
+            } 
+        } 
+        else if (Snumero == '4') {
+            div_mensagem.innerHTML = '';
+            for (var N4 = 1; N4 <= numero; N4++) {
+                var calculo4 = N4 * 4;
+
+                div_mensagem.innerHTML += `<span class="blue"> 4 x ${N4} = ${calculo4}<br></span>`;
+            } 
+        } 
+        else if (Snumero == '5') {
+            div_mensagem.innerHTML = '';
+            for (var N5 = 1; N5 <= numero; N5++) {
+                var calculo5 = N5 * 5;
+
+                div_mensagem.innerHTML += `<span class="red"> 5 x ${N5} = ${calculo5}</span> <br>`;
+            } 
+        } 
+        else if (Snumero == '6') {
+            div_mensagem.innerHTML = '';
+            for (var N6 = 1; N6 <= numero; N6++) {
+                var calculo6 = N6 * 6;
+
+                div_mensagem.innerHTML += `<span class="blue">6 x ${N6} = ${calculo6} </span><br>`;
+            } 
+        } 
+        else if (Snumero == '7') {
+            div_mensagem.innerHTML = '';
+            for (var N7 = 1; N7 <= numero; N7++) {
+                var calculo7 = N7 * 7;
+
+                div_mensagem.innerHTML += `<span class="red"> 7 x ${N7} = ${calculo7}</span> <br>`;
+            } 
+        } 
+        else if (Snumero == '8') {
+            div_mensagem.innerHTML = '';
+            for (var N8 = 1; N8 <= numero; N8++) {
+                var calculo8 = N8 * 8;
+
+                div_mensagem.innerHTML += `<span class="blue"> 8 x ${N8} = ${calculo8}</span> <br>`;
+            } 
+        } 
+        else if (Snumero == '9') {
+            div_mensagem.innerHTML = '';
+            for (var N9 = 1; N9 <= numero; N9++) {
+                var calculo9 = N9 * 9;
+
+                div_mensagem.innerHTML += `<span class="red"> 9 x ${N9} = ${calculo9}</span> <br>`;
+            } 
+        } 
+    }
+</script>

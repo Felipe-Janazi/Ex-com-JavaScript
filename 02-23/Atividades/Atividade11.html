@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 11</title>
+</head>
+<body>
+    
+    <h1> Atividade 11 </h1>
+
+    Digite o número: 
+    <input id="input_numero">
+
+    <button onclick="tabuada()">
+        Ver tabuda
+    </button>
+
+    <div id="div_tabuada">
+
+    </div>
+</body>
+</html>
+
+<script>
+
+    function tabuada() { 
+
+        var n1 = Number (input_numero.value);
+        var calculo1 = n1 * 1;
+        var calculo2 = n1 * 2;
+        var calculo3 = n1 * 3; 
+        var calculo4 = n1 * 4;
+        var calculo5 = n1 * 5; 
+        var calculo6 = n1 * 6;
+        var calculo7 = n1 * 7;
+        var calculo8 = n1 * 8; 
+        var calculo9 = n1 * 9;
+
+        div_tabuada.innerHTML += `${n1} x 1 = ${calculo1} <br>
+        ${n1} x 2 = ${calculo2} <br>
+        ${n1} x 3 = ${calculo3} <br>
+        ${n1} x 4 = ${calculo4} <br>
+        ${n1} x 5 = ${calculo5} <br>
+        ${n1} x 6 = ${calculo6} <br>
+        ${n1} x 7 = ${calculo7} <br>
+        ${n1} x 8 = ${calculo8} <br>
+        ${n1} x 9 = ${calculo9} <br> <br>
+         `;
+
+    }
+
+
+</script>

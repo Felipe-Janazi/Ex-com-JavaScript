@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+</head>
+<body>
+    <h1>
+        Atividade 1
+    </h1>
+
+    Idade:
+    <input id="input_idade"><br> <br>
+
+    <button onclick="homem()">
+        Aposentadoria homem
+    </button>
+
+    <button onclick="mulher()">
+        Aposentadoria mulher
+    </button>
+
+
+
+</body>
+</html>
+
+<script> 
+
+    function homem() {
+
+        var n1 = Number(input_idade.value); 
+        var subtrair = 70 - n1; 
+
+        alert ( "Ainda faltam " + subtrair + " anos para sua aposentadoria");
+    }
+
+    function mulher() {
+
+        var n1 = Number (input_idade.value); 
+        var subtrair = 60 - n1; 
+
+        alert ( "Ainda faltam " + subtrair + " anos para sua aposentadoria"); 
+    }
+
+</script>

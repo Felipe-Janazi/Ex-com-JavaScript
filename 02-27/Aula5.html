@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 5</title>
+</head>
+<body>
+
+    <button onclick="incrementar()"> + </button> <br> <br>
+    <button onclick="decrementar()"> - </button>
+
+    <div id="div_mensagem"> </div>
+</body>
+</html>
+
+<script>
+
+var contador = 0; 
+
+// div#div_mensagem caso aperte enter após a tag é criada automaticamente
+// button{cumprimentar} caso aperte enter após a tag é criada automaticamente com o nome
+
+
+    function incrementar() {
+        contador = contador + 1;
+        div_mensagem.innerHTML = `Seu saldo atual é  ${contador}`;
+    }
+
+    function decrementar() { 
+        contador = contador - 1; 
+        div_mensagem.innerHTML = `Seu saldo atual é  ${contador}`;
+    }
+
+</script>
+

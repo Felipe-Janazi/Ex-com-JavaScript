@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 9</title>
+</head>
+<body>
+
+    <h1>Desafio 9</h1>
+
+    Informe a marca da TV: <br>
+    <input id="input_marca"> <br><br>
+
+    Informe o preço: <br>
+    <input id="input_preco"> <br><br>
+
+    <button onclick="calcular()">Analisar compra</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function calcular() {
+
+        var marca = input_marca.value;
+        var preco = Number (input_preco.value);
+
+        if (preco < 800 || preco > 2000) {
+            div_mensagem.innerHTML  = `<br>TV fora da faixa de preço`;
+        } else {
+            if ( marca == 'Mondial' || marca == 'Britania') {
+                div_mensagem.innerHTML = `<br>Na faixa de preço, porém marca não confiável`;
+            }
+
+            if (marca == 'LG' || marca == 'Samsung') {
+                div_mensagem.innerHTML = `<br>Essa TV pode entrar na sua lista!`;
+            }
+        }
+
+        if (preco < 800 ) {
+            div_mensagem.innerHTML += `<br>Preço baixo demais!`;
+        }
+
+        if (preco > 2000) {
+            div_mensagem.innerHTML += `<br>TV cara demais, infelizmente`;
+        }
+    }
+</script>

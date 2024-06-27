@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo oninput</title>
+</head>
+<body>
+    
+    Frase: <input type="text" id="input_frase" oninput="exibir()">
+    
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function exibir() {
+        
+        div_mensagem.innerHTML = input_frase.value + frase;
+    }
+</script>
